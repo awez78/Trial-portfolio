@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Discover and share campus resources with Campus Circular.">
+
+    <title>Resources | Campus Circular</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome - only for navbar/buttons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Resource CSS -->
+    <!-- <link rel="stylesheet" href="../resources.css"> -->
+
+    <link rel="stylesheet" href="resources.css">
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+                         NAVBAR
+    ====================================================== -->
+
+    <header class="navbar" id="navbar">
+
+        <div class="container nav-container">
+
+            <!-- Logo -->
+            <a href="../index.html" class="logo">
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </span>
+
+                <span class="logo-text">
+                    Campus<span>Circular</span>
+                </span>
+
+            </a>
+
+
+            <!-- Navigation -->
+            <nav class="nav-links" id="navLinks">
+
+                <a href="../index.html#home" class="nav-link">
+                    Home
+                </a>
+
+                <a href="../index.html#how-it-works" class="nav-link">
+                    How It Works
+                </a>
+
+                <a href="resources.html" class="nav-link active">
+                    Resources
+                </a>
+
+                <a href="../index.html#impact" class="nav-link">
+                    Impact
+                </a>
+
+                <a href="../index.html#about" class="nav-link">
+                    About
+                </a>
+
+            </nav>
+
+
+            <!-- Navbar Buttons -->
+            <div class="nav-actions">
+
+                <a href="profile.html" class="btn btn-outline">
+                    <i class="fa-solid fa-user"></i>
+                    Profile
+                </a>
+
+                <a href="share-resource.html" class="btn btn-primary">
+                    <i class="fa-solid fa-plus"></i>
+                    Share Resource
+                </a>
+
+            </div>
+
+
+            <!-- Mobile Menu -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+                         MAIN
+    ====================================================== -->
+
+    <main class="resource-page">
+
+        <div class="container">
+
+
+            <!-- =================================================
+                            PAGE HEADER
+            ================================================== -->
+
+            <section class="resource-header">
+
+                <div class="resource-header-content">
+
+                    <span class="section-tag">
+                        Campus Resource Hub
+                    </span>
+
+                    <h1>
+                        Discover what your
+                        <span>campus</span>
+                        already has.
+                    </h1>
+
+                    <p>
+                        Find laptops, books, cameras, calculators,
+                        sports equipment and more. Borrow from your
+                        campus community instead of buying something
+                        you may only need for a short time.
+                    </p>
+
+                </div>
+
+
+                <a href="discovery.html" class="btn btn-primary">
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    Smart Discovery
+
+                </a>
+
+            </section>
+
+
+            <!-- =================================================
+                         SEARCH + FILTER
+            ================================================== -->
+
+            <section class="resource-search-area">
+
+                <!-- Search -->
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input type="search" id="resourceSearch"
+                        placeholder="Search laptops, books, cameras, calculators..." aria-label="Search resources">
+
+                </div>
+
+
+                <!-- Filters -->
+
+                <div class="resource-filters" id="resourceFilters">
+
+                    <button class="filter-btn active" data-category="all">
+
+                        All
+
+                    </button>
+
+
+                    <button class="filter-btn" data-category="electronics">
+
+                        Electronics
+
+                    </button>
+
+
+                    <button class="filter-btn" data-category="books">
+
+                        Books
+
+                    </button>
+
+
+                    <button class="filter-btn" data-category="camera">
+
+                        Cameras
+
+                    </button>
+
+
+                    <button class="filter-btn" data-category="sports">
+
+                        Sports
+
+                    </button>
+
+
+                    <button class="filter-btn" data-category="music">
+
+                        Music
+
+                    </button>
+
+
+                    <button class="filter-btn" data-category="study">
+
+                        Study
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                         RESULT BAR
+            ================================================== -->
+
+            <div class="result-bar">
+
+                <span class="result-count">
+
+                    Showing
+
+                    <strong id="resourceCount">
+                        6
+                    </strong>
+
+                    resources
+
+                </span>
+
+
+                <div class="sort-box">
+
+                    <label for="sortResources">
+                        Sort by
+                    </label>
+
+                    <select id="sortResources">
+
+                        <option value="recommended">
+                            Recommended
+                        </option>
+
+                        <option value="price-low">
+                            Price: Low to High
+                        </option>
+
+                        <option value="price-high">
+                            Price: High to Low
+                        </option>
+
+                        <option value="name">
+                            Name
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                         RESOURCE GRID
+            ================================================== -->
+
+            <section class="resource-grid" id="resourceGrid">
+
+
+                <!-- =================================================
+                            RESOURCE 1
+                ================================================== -->
+
+                <article class="resource-card" data-category="electronics" data-name="MacBook Air M2" data-price="150">
+
+                    <div class="resource-image">
+
+                        <span class="resource-badge available">
+                            Available
+                        </span>
+
+
+                        <button class="resource-favourite" aria-label="Add MacBook Air to favourites">
+
+                            <i class="fa-regular fa-heart"></i>
+
+                        </button>
+
+
+                        <!-- IMAGE -->
+                        <img src=" ../assets/images/macbook.jpg " alt="MacBook Air M2" loading="lazy">
+
+                    </div>
+
+
+                    <div class="resource-body">
+
+                        <span class="resource-category">
+                            Electronics
+                        </span>
+
+                        <h2>
+                            MacBook Air M2
+                        </h2>
+
+                        <p class="resource-description">
+                            Ideal for coding, assignments,
+                            presentations and project work.
+                        </p>
+
+
+                        <!-- Owner -->
+
+                        <div class="resource-owner">
+
+                            <div class="owner-avatar">
+                                AS
+                            </div>
+
+                            <div class="owner-info">
+
+                                <strong>
+                                    Alex Sharma
+                                </strong>
+
+                                <span>
+                                    Computer Engineering
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Footer -->
+
+                        <div class="resource-footer">
+
+                            <div class="resource-price">
+                                ₹150
+                                <span>/ day</span>
+                            </div>
+
+                            <button class="borrow-btn" data-resource="MacBook Air M2">
+
+                                Borrow
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                            RESOURCE 2
+                ================================================== -->
+
+                <article class="resource-card" data-category="camera" data-name="Sony Alpha Camera" data-price="200">
+
+                    <div class="resource-image">
+
+                        <span class="resource-badge available">
+                            Available
+                        </span>
+
+
+                        <button class="resource-favourite" aria-label="Add camera to favourites">
+
+                            <i class="fa-regular fa-heart"></i>
+
+                        </button>
+
+
+                        <img src=" ../assets/images/camera.jpg" alt="Sony Alpha Camera" loading="lazy">
+
+                    </div>
+
+
+                    <div class="resource-body">
+
+                        <span class="resource-category">
+                            Camera
+                        </span>
+
+                        <h2>
+                            Sony Alpha Camera
+                        </h2>
+
+                        <p class="resource-description">
+                            Mirrorless camera kit for events,
+                            projects and campus photography.
+                        </p>
+
+
+                        <div class="resource-owner">
+
+                            <div class="owner-avatar">
+                                RK
+                            </div>
+
+                            <div class="owner-info">
+
+                                <strong>
+                                    Rohan Kulkarni
+                                </strong>
+
+                                <span>
+                                    Media Club
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="resource-footer">
+
+                            <div class="resource-price">
+                                ₹200
+                                <span>/ day</span>
+                            </div>
+
+                            <button class="borrow-btn" data-resource="Sony Alpha Camera">
+
+                                Borrow
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                            RESOURCE 3
+                ================================================== -->
+
+                <article class="resource-card" data-category="books" data-name="Data Structures Textbook"
+                    data-price="30">
+
+                    <div class="resource-image">
+
+                        <span class="resource-badge available">
+                            Available
+                        </span>
+
+
+                        <button class="resource-favourite" aria-label="Add textbook to favourites">
+
+                            <i class="fa-regular fa-heart"></i>
+
+                        </button>
+
+
+                        <img src=" ../assets/images/data.jpg " alt="Data Structures Textbook" loading="lazy">
+
+                    </div>
+
+
+                    <div class="resource-body">
+
+                        <span class="resource-category">
+                            Books
+                        </span>
+
+                        <h2>
+                            Data Structures Textbook
+                        </h2>
+
+                        <p class="resource-description">
+                            Complete reference book for DSA,
+                            algorithms and exam preparation.
+                        </p>
+
+
+                        <div class="resource-owner">
+
+                            <div class="owner-avatar">
+                                NM
+                            </div>
+
+                            <div class="owner-info">
+
+                                <strong>
+                                    Neha Mehta
+                                </strong>
+
+                                <span>
+                                    IT Department
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="resource-footer">
+
+                            <div class="resource-price">
+                                ₹30
+                                <span>/ day</span>
+                            </div>
+
+                            <button class="borrow-btn" data-resource="Data Structures Textbook">
+
+                                Borrow
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                            RESOURCE 4
+                ================================================== -->
+
+                <article class="resource-card" data-category="sports" data-name="Professional Basketball"
+                    data-price="50">
+
+                    <div class="resource-image">
+
+                        <span class="resource-badge borrowed">
+                            Currently Borrowed
+                        </span>
+
+
+                        <button class="resource-favourite" aria-label="Add basketball to favourites">
+
+                            <i class="fa-regular fa-heart"></i>
+
+                        </button>
+
+
+                        <img src=" ../assets/images/ball.jpg" alt="Professional Basketball" loading="lazy">
+
+                    </div>
+
+
+                    <div class="resource-body">
+
+                        <span class="resource-category">
+                            Sports
+                        </span>
+
+                        <h2>
+                            Professional Basketball
+                        </h2>
+
+                        <p class="resource-description">
+                            Quality basketball available for
+                            campus games and practice sessions.
+                        </p>
+
+
+                        <div class="resource-owner">
+
+                            <div class="owner-avatar">
+                                VP
+                            </div>
+
+                            <div class="owner-info">
+
+                                <strong>
+                                    Vikram Patil
+                                </strong>
+
+                                <span>
+                                    Sports Club
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="resource-footer">
+
+                            <div class="resource-price">
+                                ₹50
+                                <span>/ day</span>
+                            </div>
+
+                            <button class="borrow-btn disabled" disabled>
+
+                                Unavailable
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                            RESOURCE 5
+                ================================================== -->
+
+                <article class="resource-card" data-category="music" data-name="Acoustic Guitar" data-price="100">
+
+                    <div class="resource-image">
+
+                        <span class="resource-badge available">
+                            Available
+                        </span>
+
+
+                        <button class="resource-favourite" aria-label="Add guitar to favourites">
+
+                            <i class="fa-regular fa-heart"></i>
+
+                        </button>
+
+
+                        <img src=" ../assets/images/guitar.jpg" alt="Acoustic Guitar" loading="lazy">
+
+                    </div>
+
+
+                    <div class="resource-body">
+
+                        <span class="resource-category">
+                            Music
+                        </span>
+
+                        <h2>
+                            Acoustic Guitar
+                        </h2>
+
+                        <p class="resource-description">
+                            Acoustic guitar for music club
+                            sessions and campus performances.
+                        </p>
+
+
+                        <div class="resource-owner">
+
+                            <div class="owner-avatar">
+                                SI
+                            </div>
+
+                            <div class="owner-info">
+
+                                <strong>
+                                    Sameer Iyer
+                                </strong>
+
+                                <span>
+                                    Music Club
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="resource-footer">
+
+                            <div class="resource-price">
+                                ₹100
+                                <span>/ day</span>
+                            </div>
+
+                            <button class="borrow-btn" data-resource="Acoustic Guitar">
+
+                                Borrow
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                            RESOURCE 6
+                ================================================== -->
+
+                <article class="resource-card" data-category="study" data-name="Scientific Calculator" data-price="20">
+
+                    <div class="resource-image">
+
+                        <span class="resource-badge available">
+                            Available
+                        </span>
+
+
+                        <button class="resource-favourite" aria-label="Add calculator to favourites">
+
+                            <i class="fa-regular fa-heart"></i>
+
+                        </button>
+
+
+                        <img src=" ../assets/images/Scientific.jpg" alt="Scientific Calculator" loading="lazy">
+
+                    </div>
+
+
+                    <div class="resource-body">
+
+                        <span class="resource-category">
+                            Study
+                        </span>
+
+                        <h2>
+                            Scientific Calculator
+                        </h2>
+
+                        <p class="resource-description">
+                            Scientific calculator for engineering
+                            exams, labs and calculations.
+                        </p>
+
+
+                        <div class="resource-owner">
+
+                            <div class="owner-avatar">
+                                AM
+                            </div>
+
+                            <div class="owner-info">
+
+                                <strong>
+                                    Aarav Mehta
+                                </strong>
+
+                                <span>
+                                    Mechanical Engineering
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="resource-footer">
+
+                            <div class="resource-price">
+                                ₹20
+                                <span>/ day</span>
+                            </div>
+
+                            <button class="borrow-btn" data-resource="Scientific Calculator">
+
+                                Borrow
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                            EMPTY STATE
+            ================================================== -->
+
+            <div class="empty-state" id="emptyState">
+
+                <i class="fa-solid fa-box-open"></i>
+
+                <h3>
+                    No resources found
+                </h3>
+
+                <p>
+                    Try another search term or choose
+                    a different category.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+                         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-main">
+
+
+                <!-- Brand -->
+
+                <div class="footer-brand">
+
+                    <a href="../index.html" class="logo footer-logo">
+
+                        <span class="logo-icon">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                        </span>
+
+                        <span class="logo-text">
+                            Campus<span>Circular</span>
+                        </span>
+
+                    </a>
+
+                    <p>
+                        A smarter way for campus communities
+                        to share, borrow and circulate resources.
+                    </p>
+
+
+                    <div class="social-links">
+
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="#" aria-label="X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Platform -->
+
+                <div class="footer-column">
+
+                    <h4>
+                        Platform
+                    </h4>
+
+                    <a href="discovery.html">
+                        Discover
+                    </a>
+
+                    <a href="ai-discovery.html">
+                        AI Discovery
+                    </a>
+
+                    <a href="matching.html">
+                        Matching
+                    </a>
+
+                    <a href="resources.html">
+                        Resources
+                    </a>
+
+                </div>
+
+
+                <!-- Borrowing -->
+
+                <div class="footer-column">
+
+                    <h4>
+                        Borrowing
+                    </h4>
+
+                    <a href="charges.html">
+                        Charges
+                    </a>
+
+                    <a href="agreement.html">
+                        Agreement
+                    </a>
+
+                    <a href="condition.html">
+                        Condition Check
+                    </a>
+
+                    <a href="lifecycle.html">
+                        Lifecycle
+                    </a>
+
+                </div>
+
+
+                <!-- Community -->
+
+                <div class="footer-column">
+
+                    <h4>
+                        Community
+                    </h4>
+
+                    <a href="profile.html">
+                        Profile
+                    </a>
+
+                    <a href="settlement.html">
+                        Settlement
+                    </a>
+
+                    <a href="impact.html">
+                        Impact
+                    </a>
+
+                    <a href="admin.html">
+                        Admin
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Footer Bottom -->
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 Campus Circular.
+                    All rights reserved.
+                </span>
+
+
+                <div class="footer-bottom-links">
+
+                    <a href="condition.html">
+                        Terms
+                    </a>
+
+                    <a href="agreement.html">
+                        Privacy
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+                         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="../script.js"></script>
+
+    <script src="../resources.js"></script>
+
+</body>
+
+</html>

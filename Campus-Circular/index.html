@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Campus Circular - A smart campus resource-sharing platform for discovering, borrowing, lending and returning campus resources.">
+
+    <title>Campus Circular | Share. Borrow. Return.</title>
+    
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="icon" type="image/png" href="assets/images/users-solid.png">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header class="navbar" id="navbar">
+
+        <div class="container nav-container">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </span>
+
+                <span class="logo-text">
+                    Campus<span>Circular</span>
+                </span>
+
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-links" id="navLinks">
+
+                <a href="#home" class="nav-link active">Home</a>
+
+                <a href="#how-it-works" class="nav-link">
+                    How It Works
+                </a>
+
+                <a href="#resources" class="nav-link">
+                    Resources
+                </a>
+
+                <a href="#impact" class="nav-link">
+                    Impact
+                </a>
+
+                <a href="#about" class="nav-link">
+                    About
+                </a>
+
+            </nav>
+
+            <!-- Navigation Actions -->
+            <div class="nav-actions">
+
+                <a href="pages/profile.html" class="btn btn-outline nav-login">
+                    <i class="fa-regular fa-user"></i>
+                    Profile
+                </a>
+
+                <a href="pages/discovery.html" class="btn btn-primary nav-start">
+                    Explore Resources
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- =====================================================
+             HERO SECTION
+        ====================================================== -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-background-shape shape-one"></div>
+            <div class="hero-background-shape shape-two"></div>
+
+            <div class="container hero-container">
+
+                <!-- Hero Content -->
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        <span class="eyebrow-dot"></span>
+                        Smart Resource Sharing for Campuses
+                    </div>
+
+                    <h1>
+                        Your campus has
+                        <span>more to share.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Discover, borrow, lend and return useful resources
+                        within your campus community. Make every resource
+                        count with Campus Circular.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="pages/discovery.html" class="btn btn-primary btn-large">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            Discover Resources
+                        </a>
+
+                        <a href="#how-it-works" class="btn btn-secondary btn-large">
+                            <i class="fa-regular fa-circle-play"></i>
+                            See How It Works
+                        </a>
+
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="hero-trust">
+
+                        <div class="trust-item">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Verified Campus Users</span>
+                        </div>
+
+                        <div class="trust-item">
+                            <i class="fa-solid fa-leaf"></i>
+                            <span>Reduce Resource Waste</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Hero Visual -->
+                <div class="hero-visual">
+
+                    <div class="dashboard-card">
+
+                        <!-- Dashboard Header -->
+                        <div class="dashboard-header">
+
+                            <div>
+                                <span class="small-label">CAMPUS CIRCULAR</span>
+                                <h3>Resource Hub</h3>
+                            </div>
+
+                            <div class="notification-icon">
+                                <i class="fa-regular fa-bell"></i>
+                                <span></span>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Search -->
+                        <div class="dashboard-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <span>Search campus resources...</span>
+                        </div>
+
+
+                        <!-- Resource Categories -->
+                        <div class="category-row">
+
+                            <div class="mini-category active">
+                                <i class="fa-solid fa-laptop"></i>
+                                <span>Tech</span>
+                            </div>
+
+                            <div class="mini-category">
+                                <i class="fa-solid fa-book"></i>
+                                <span>Books</span>
+                            </div>
+
+                            <div class="mini-category">
+                                <i class="fa-solid fa-camera"></i>
+                                <span>Media</span>
+                            </div>
+
+                            <div class="mini-category">
+                                <i class="fa-solid fa-futbol"></i>
+                                <span>Sports</span>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Resource Card -->
+                        <div class="resource-preview">
+
+                            <div class="resource-image laptop-image">
+                                <i class="fa-solid fa-laptop"></i>
+                            </div>
+
+                            <div class="resource-info">
+
+                                <div class="resource-title-row">
+                                    <h4>MacBook Air M2</h4>
+
+                                    <span class="available-badge">
+                                        Available
+                                    </span>
+                                </div>
+
+                                <p>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Innovation Lab
+                                </p>
+
+                                <div class="resource-footer">
+
+                                    <span>
+                                        <i class="fa-regular fa-clock"></i>
+                                        2 days
+                                    </span>
+
+                                    <button class="small-action">
+                                        Borrow
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Another Resource -->
+                        <div class="resource-preview second-resource">
+
+                            <div class="resource-image camera-image">
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+
+                            <div class="resource-info">
+
+                                <div class="resource-title-row">
+                                    <h4>Sony Camera Kit</h4>
+
+                                    <span class="available-badge">
+                                        Available
+                                    </span>
+                                </div>
+
+                                <p>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Media Department
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Floating Match Card -->
+                    <div class="floating-card match-card">
+
+                        <div class="floating-icon match-icon">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+
+                        <div>
+                            <span>Smart Match</span>
+                            <strong>96% Match Found</strong>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Floating Impact Card -->
+                    <div class="floating-card impact-card">
+
+                        <div class="impact-circle">
+                            <i class="fa-solid fa-recycle"></i>
+                        </div>
+
+                        <div>
+                            <span>Resources Circulated</span>
+                            <strong>1,248+</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             STATS
+        ====================================================== -->
+
+        <section class="stats-section">
+
+            <div class="container stats-container">
+
+                <div class="stat-item">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+
+                    <div>
+                        <strong>1,248+</strong>
+                        <span>Resources Shared</span>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-item">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <strong>3,500+</strong>
+                        <span>Campus Members</span>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-item">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    </div>
+
+                    <div>
+                        <strong>8,920+</strong>
+                        <span>Successful Exchanges</span>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-item">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <div>
+                        <strong>2.4T</strong>
+                        <span>Waste Avoided</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             HOW IT WORKS
+        ====================================================== -->
+
+        <section class="section how-section" id="how-it-works">
+
+            <div class="container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-tag">
+                        SIMPLE & SMART
+                    </span>
+
+                    <h2>
+                        From discovery to return,
+                        <span>made effortless.</span>
+                    </h2>
+
+                    <p>
+                        Campus Circular simplifies the entire resource-sharing
+                        journey through one connected platform.
+                    </p>
+
+                </div>
+
+
+                <div class="steps-grid">
+
+                    <!-- Step 01 -->
+                    <div class="step-card">
+
+                        <div class="step-number">01</div>
+
+                        <div class="step-icon">
+                            <i class="fa-solid fa-user-check"></i>
+                        </div>
+
+                        <h3>Create Your Profile</h3>
+
+                        <p>
+                            Set up your campus profile and tell us what
+                            resources you need or can share.
+                        </p>
+
+                        <a href="pages/profile.html" class="step-link">
+                            Build Profile
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+
+                    <!-- Step 02 -->
+                    <div class="step-card">
+
+                        <div class="step-number">02</div>
+
+                        <div class="step-icon">
+                            <i class="fa-solid fa-compass"></i>
+                        </div>
+
+                        <h3>Discover Resources</h3>
+
+                        <p>
+                            Search campus resources using categories,
+                            availability, location and smart filters.
+                        </p>
+
+                        <a href="pages/discovery.html" class="step-link">
+                            Start Discovering
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+
+                    <!-- Step 03 -->
+                    <div class="step-card">
+
+                        <div class="step-number">03</div>
+
+                        <div class="step-icon">
+                            <i class="fa-solid fa-link"></i>
+                        </div>
+
+                        <h3>Find Your Match</h3>
+
+                        <p>
+                            Our matching system helps connect your needs
+                            with the right available resources.
+                        </p>
+
+                        <a href="pages/matching.html" class="step-link">
+                            Find a Match
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+
+                    <!-- Step 04 -->
+                    <div class="step-card">
+
+                        <div class="step-number">04</div>
+
+                        <div class="step-icon">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+
+                        <h3>Borrow & Return</h3>
+
+                        <p>
+                            Agree on terms, track the borrowing lifecycle,
+                            return the resource and complete settlement.
+                        </p>
+
+                        <a href="pages/lifecycle.html" class="step-link">
+                            View Lifecycle
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             RESOURCE CATEGORIES
+        ====================================================== -->
+
+        <section class="section resources-section" id="resources">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-tag">
+                            CAMPUS RESOURCES
+                        </span>
+
+                        <h2>
+                            Whatever you need,
+                            <span>someone has it.</span>
+                        </h2>
+                    </div>
+
+                    <a href="pages/resources.html" class="text-link">
+                        View All Resources
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="resource-grid">
+
+                    <!-- Technology -->
+                    <a href="pages/resources.html?category=technology"
+                        class="category-card category-tech">
+
+                        <div class="category-icon">
+                            <i class="fa-solid fa-laptop"></i>
+                        </div>
+
+                        <div class="category-content">
+
+                            <span class="category-count">
+                                320+ items
+                            </span>
+
+                            <h3>Technology</h3>
+
+                            <p>
+                                Laptops, tablets, chargers and accessories.
+                            </p>
+
+                        </div>
+
+                        <span class="category-arrow">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </span>
+
+                    </a>
+
+
+                    <!-- Books -->
+                    <a href="pages/resources.html?category=books"
+                        class="category-card category-books">
+
+                        <div class="category-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+
+                        <div class="category-content">
+
+                            <span class="category-count">
+                                580+ items
+                            </span>
+
+                            <h3>Books & Notes</h3>
+
+                            <p>
+                                Textbooks, notes, journals and study material.
+                            </p>
+
+                        </div>
+
+                        <span class="category-arrow">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </span>
+
+                    </a>
+
+
+                    <!-- Media -->
+                    <a href="pages/resources.html?category=media"
+                        class="category-card category-media">
+
+                        <div class="category-icon">
+                            <i class="fa-solid fa-camera"></i>
+                        </div>
+
+                        <div class="category-content">
+
+                            <span class="category-count">
+                                180+ items
+                            </span>
+
+                            <h3>Media</h3>
+
+                            <p>
+                                Cameras, tripods, microphones and equipment.
+                            </p>
+
+                        </div>
+
+                        <span class="category-arrow">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </span>
+
+                    </a>
+
+
+                    <!-- Sports -->
+                    <a href="pages/resources.html?category=sports"
+                        class="category-card category-sports">
+
+                        <div class="category-icon">
+                            <i class="fa-solid fa-futbol"></i>
+                        </div>
+
+                        <div class="category-content">
+
+                            <span class="category-count">
+                                95+ items
+                            </span>
+
+                            <h3>Sports</h3>
+
+                            <p>
+                                Equipment for indoor and outdoor activities.
+                            </p>
+
+                        </div>
+
+                        <span class="category-arrow">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </span>
+
+                    </a>
+
+
+                    <!-- Music -->
+                    <a href="pages/resources.html?category=music"
+                        class="category-card category-music">
+
+                        <div class="category-icon">
+                            <i class="fa-solid fa-guitar"></i>
+                        </div>
+
+                        <div class="category-content">
+
+                            <span class="category-count">
+                                75+ items
+                            </span>
+
+                            <h3>Music</h3>
+
+                            <p>
+                                Instruments, amps, microphones and accessories.
+                            </p>
+
+                        </div>
+
+                        <span class="category-arrow">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </span>
+
+                    </a>
+
+
+                    <!-- More -->
+                    <a href="pages/resources.html"
+                        class="category-card category-more">
+
+                        <div class="category-icon">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+
+                        <div class="category-content">
+
+                            <span class="category-count">
+                                More categories
+                            </span>
+
+                            <h3>Explore More</h3>
+
+                            <p>
+                                Discover everything available on your campus.
+                            </p>
+
+                        </div>
+
+                        <span class="category-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             AI DISCOVERY
+        ====================================================== -->
+
+        <section class="section ai-section">
+
+            <div class="container ai-container">
+
+                <div class="ai-content">
+
+                    <span class="section-tag">
+                        INTELLIGENT DISCOVERY
+                    </span>
+
+                    <h2>
+                        Don't know exactly
+                        <span>what you're looking for?</span>
+                    </h2>
+
+                    <p>
+                        Describe what you need in natural language and let
+                        Campus Circular's smart discovery system find
+                        relevant resources for you.
+                    </p>
+
+
+                    <div class="ai-example">
+
+                        <div class="ai-avatar">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+
+                        <div class="ai-message">
+
+                            <span>You</span>
+
+                            <p>
+                                "I need something to record a presentation
+                                for my final-year project."
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="pages/ai-discovery.html"
+                        class="btn btn-primary btn-large">
+
+                        <i class="fa-solid fa-sparkles"></i>
+
+                        Try AI Discovery
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+
+                <div class="ai-visual">
+
+                    <div class="ai-result-card">
+
+                        <div class="ai-result-header">
+
+                            <div class="ai-result-title">
+
+                                <div class="ai-small-icon">
+                                    <i class="fa-solid fa-sparkles"></i>
+                                </div>
+
+                                <div>
+                                    <span>AI DISCOVERY</span>
+                                    <strong>Best matches for you</strong>
+                                </div>
+
+                            </div>
+
+                            <span class="match-score">
+                                96%
+                            </span>
+
+                        </div>
+
+
+                        <div class="ai-result-item">
+
+                            <div class="result-resource-icon camera-result">
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+
+                            <div class="result-resource-info">
+
+                                <strong>Sony Alpha Camera Kit</strong>
+
+                                <span>
+                                    Media Department · 0.3 km
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </div>
+
+
+                        <div class="ai-result-item">
+
+                            <div class="result-resource-icon mic-result">
+                                <i class="fa-solid fa-microphone"></i>
+                            </div>
+
+                            <div class="result-resource-info">
+
+                                <strong>USB Condenser Microphone</strong>
+
+                                <span>
+                                    Student Media Club · 0.6 km
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </div>
+
+
+                        <div class="ai-result-item">
+
+                            <div class="result-resource-icon tripod-result">
+                                <i class="fa-solid fa-camera-retro"></i>
+                            </div>
+
+                            <div class="result-resource-info">
+
+                                <strong>Professional Tripod</strong>
+
+                                <span>
+                                    Innovation Lab · 0.8 km
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             COMMUNITY SECTION
+        ====================================================== -->
+
+        <section class="section community-section">
+
+            <div class="container community-container">
+
+                <div class="community-visual">
+
+                    <div class="community-card">
+
+                        <div class="community-card-header">
+
+                            <div class="avatar-stack">
+
+                                <span class="avatar avatar-one">A</span>
+                                <span class="avatar avatar-two">R</span>
+                                <span class="avatar avatar-three">S</span>
+                                <span class="avatar avatar-four">K</span>
+
+                            </div>
+
+                            <span class="community-live">
+                                <span></span>
+                                Active Campus
+                            </span>
+
+                        </div>
+
+
+                        <div class="community-stat">
+
+                            <span>Resources helping students today</span>
+
+                            <strong>486</strong>
+
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <span></span>
+
+                        </div>
+
+
+                        <div class="community-footer">
+
+                            <span>
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+                                18% this month
+                            </span>
+
+                            <span>
+                                Keep sharing
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="community-content">
+
+                    <span class="section-tag">
+                        COMMUNITY POWERED
+                    </span>
+
+                    <h2>
+                        A campus where
+                        <span>resources keep moving.</span>
+                    </h2>
+
+                    <p>
+                        Every unused laptop, book, camera or instrument can
+                        become useful to someone else. Campus Circular
+                        creates a trusted network where students help
+                        students.
+                    </p>
+
+
+                    <div class="feature-list">
+
+                        <div class="feature-item">
+
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+
+                            <div>
+                                <strong>Verified community</strong>
+                                <span>
+                                    Share resources with trusted campus members.
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="feature-item">
+
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+
+                            <div>
+                                <strong>Real-time availability</strong>
+                                <span>
+                                    Know what is available before you request it.
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="feature-item">
+
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+
+                            <div>
+                                <strong>Track your impact</strong>
+                                <span>
+                                    See how your sharing contributes to campus sustainability.
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             IMPACT
+        ====================================================== -->
+
+        <section class="section impact-section" id="impact">
+
+            <div class="container">
+
+                <div class="impact-header">
+
+                    <div class="section-heading">
+
+                        <span class="section-tag">
+                            CAMPUS IMPACT
+                        </span>
+
+                        <h2>
+                            Sharing creates
+                            <span>real impact.</span>
+                        </h2>
+
+                        <p>
+                            When resources circulate instead of sitting unused,
+                            the entire campus benefits.
+                        </p>
+
+                    </div>
+
+                    <a href="pages/impact.html" class="btn btn-secondary">
+                        Explore Impact
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="impact-grid">
+
+                    <div class="impact-box">
+
+                        <div class="impact-box-icon">
+                            <i class="fa-solid fa-recycle"></i>
+                        </div>
+
+                        <strong>2.4T</strong>
+
+                        <span>
+                            Estimated waste avoided
+                        </span>
+
+                    </div>
+
+
+                    <div class="impact-box">
+
+                        <div class="impact-box-icon">
+                            <i class="fa-solid fa-coins"></i>
+                        </div>
+
+                        <strong>₹8.6L+</strong>
+
+                        <span>
+                            Estimated savings for students
+                        </span>
+
+                    </div>
+
+
+                    <div class="impact-box">
+
+                        <div class="impact-box-icon">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </div>
+
+                        <strong>8.9K+</strong>
+
+                        <span>
+                            Resource exchanges completed
+                        </span>
+
+                    </div>
+
+
+                    <div class="impact-box">
+
+                        <div class="impact-box-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <strong>3.5K+</strong>
+
+                        <span>
+                            Students participating
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="cta-section">
+
+            <div class="container">
+
+                <div class="cta-card">
+
+                    <div class="cta-decoration decoration-one"></div>
+                    <div class="cta-decoration decoration-two"></div>
+
+                    <div class="cta-content">
+
+                        <span class="section-tag">
+                            READY TO CIRCULATE?
+                        </span>
+
+                        <h2>
+                            Your next useful resource
+                            <span>might already be on campus.</span>
+                        </h2>
+
+                        <p>
+                            Start exploring resources shared by your campus
+                            community today.
+                        </p>
+
+                        <div class="cta-buttons">
+
+                            <a href="pages/discovery.html"
+                                class="btn btn-white btn-large">
+
+                                <i class="fa-solid fa-compass"></i>
+
+                                Explore Resources
+
+                            </a>
+
+                            <a href="pages/profile.html"
+                                class="btn btn-transparent btn-large">
+
+                                Create Profile
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer" id="about">
+
+        <div class="container">
+
+            <div class="footer-main">
+
+                <!-- Footer Brand -->
+                <div class="footer-brand">
+
+                    <a href="index.html" class="logo footer-logo">
+
+                        <span class="logo-icon">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                        </span>
+
+                        <span class="logo-text">
+                            Campus<span>Circular</span>
+                        </span>
+
+                    </a>
+
+                    <p>
+                        A smarter way for campus communities to share,
+                        borrow and circulate resources.
+                    </p>
+
+
+                    <div class="social-links">
+
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="#" aria-label="Twitter">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Platform -->
+                <div class="footer-column">
+
+                    <h4>Platform</h4>
+
+                    <a href="pages/discovery.html">Discover</a>
+                    <a href="pages/ai-discovery.html">AI Discovery</a>
+                    <a href="pages/matching.html">Matching</a>
+                    <a href="pages/resources.html">Resources</a>
+
+                </div>
+
+
+                <!-- Borrowing -->
+                <div class="footer-column">
+
+                    <h4>Borrowing</h4>
+
+                    <a href="pages/charges.html">Charges</a>
+                    <a href="pages/agreement.html">Agreement</a>
+                    <a href="pages/condition.html">Condition Check</a>
+                    <a href="pages/lifecycle.html">Lifecycle</a>
+
+                </div>
+
+
+                <!-- Community -->
+                <div class="footer-column">
+
+                    <h4>Community</h4>
+
+                    <a href="pages/profile.html">Profile</a>
+                    <a href="pages/settlement.html">Settlement</a>
+                    <a href="pages/impact.html">Impact</a>
+                    <a href="pages/admin.html">Admin</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 Campus Circular. All rights reserved.
+                </span>
+
+                <div class="footer-bottom-links">
+
+                    <a href="pages/condition.html">
+                        Terms
+                    </a>
+
+                    <a href="pages/agreement.html">
+                        Privacy
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

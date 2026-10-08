@@ -1,0 +1,2742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Condition Check | Campus Circular</title>
+
+    <!-- Fonts -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Common CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../style.css">
+
+
+    <style>
+
+        /* =====================================================
+           CONDITION PAGE
+        ===================================================== */
+
+        .condition-page {
+
+            padding-top: 120px;
+
+            padding-bottom: 100px;
+
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .condition-header {
+
+            max-width: 720px;
+
+            margin-bottom: 32px;
+
+        }
+
+
+        .condition-tag {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            padding: 7px 12px;
+
+            border-radius: 50px;
+
+            color: #0369a1;
+
+            background: #e0f2fe;
+
+            font-size: .77rem;
+
+            font-weight: 800;
+
+        }
+
+
+        .condition-header h1 {
+
+            margin-top: 16px;
+
+            color: var(--dark);
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size:
+                clamp(2.3rem, 5vw, 3.5rem);
+
+            line-height: 1.05;
+
+        }
+
+
+        .condition-header h1 span {
+
+            color: var(--primary);
+
+        }
+
+
+        .condition-header p {
+
+            margin-top: 14px;
+
+            color: var(--text-light);
+
+            font-size: .97rem;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           PROGRESS
+        ===================================================== */
+
+        .condition-progress {
+
+            display: flex;
+
+            align-items: center;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .progress-step {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            color: #94a3b8;
+
+            font-size: .77rem;
+
+            font-weight: 700;
+
+            white-space: nowrap;
+
+        }
+
+
+        .progress-number {
+
+            width: 28px;
+
+            height: 28px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 50%;
+
+            color: #64748b;
+
+            background: #f1f5f9;
+
+            font-size: .77rem;
+
+        }
+
+
+        .progress-step.completed {
+
+            color: #16a34a;
+
+        }
+
+
+        .progress-step.completed
+        .progress-number {
+
+            color: white;
+
+            background: #16a34a;
+
+        }
+
+
+        .progress-step.active {
+
+            color: var(--primary);
+
+        }
+
+
+        .progress-step.active
+        .progress-number {
+
+            color: white;
+
+            background: var(--primary);
+
+        }
+
+
+        .progress-line {
+
+            width: 55px;
+
+            height: 1px;
+
+            margin: 0 8px;
+
+            background: #e2e8f0;
+
+        }
+
+
+        /* =====================================================
+           RESOURCE BANNER
+        ===================================================== */
+
+        .resource-banner {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 17px 19px;
+
+            margin-bottom: 22px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+            background: white;
+
+            box-shadow: var(--shadow-sm);
+
+        }
+
+
+        .resource-info {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+        }
+
+
+        .resource-icon {
+
+            width: 47px;
+
+            height: 47px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 10px;
+
+            color: var(--primary);
+
+            background: #dbeafe;
+
+        }
+
+
+        .resource-info h3 {
+
+            color: var(--dark);
+
+            font-size: .97rem;
+
+        }
+
+
+        .resource-info p {
+
+            margin-top: 4px;
+
+            color: var(--text-light);
+
+            font-size: .77rem;
+
+        }
+
+
+        .verified-status {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            padding: 6px 9px;
+
+            border-radius: 50px;
+
+            color: #166534;
+
+            background: #dcfce7;
+
+            font-size: .77rem;
+
+            font-weight: 800;
+
+        }
+
+
+        /* =====================================================
+           MAIN GRID
+        ===================================================== */
+
+        .condition-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr .82fr;
+
+            gap: 22px;
+
+            align-items: start;
+
+        }
+
+
+        /* =====================================================
+           CHECKLIST CARD
+        ===================================================== */
+
+        .check-card {
+
+            padding: 24px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            background: white;
+
+            box-shadow: var(--shadow-sm);
+
+        }
+
+
+        .card-heading {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 11px;
+
+            margin-bottom: 23px;
+
+        }
+
+
+        .card-heading-icon {
+
+            width: 42px;
+
+            height: 42px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 10px;
+
+            color: var(--primary);
+
+            background: #eff6ff;
+
+        }
+
+
+        .card-heading h2 {
+
+            color: var(--dark);
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size: 1.2rem;
+
+        }
+
+
+        .card-heading p {
+
+            margin-top: 3px;
+
+            color: var(--text-light);
+
+            font-size: .77rem;
+
+        }
+
+
+        /* =====================================================
+           CONDITION ITEMS
+        ===================================================== */
+
+        .condition-items {
+
+            display: grid;
+
+            gap: 10px;
+
+        }
+
+
+        .condition-item {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            padding: 13px;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 10px;
+
+            transition: .2s ease;
+
+        }
+
+
+        .condition-item:hover {
+
+            border-color:
+                #bfdbfe;
+
+            background: #f8fbff;
+
+        }
+
+
+        .item-info {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+        }
+
+
+        .item-icon {
+
+            width: 32px;
+
+            height: 32px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 8px;
+
+            color: #475569;
+
+            background: #f1f5f9;
+
+            font-size: .77rem;
+
+        }
+
+
+        .item-info h4 {
+
+            color: var(--dark);
+
+            font-size: .77rem;
+
+        }
+
+
+        .item-info p {
+
+            margin-top: 2px;
+
+            color: var(--text-light);
+
+            font-size: .7rem;
+
+        }
+
+
+        /* =====================================================
+           RATING
+        ===================================================== */
+
+        .rating {
+
+            display: flex;
+
+            gap: 4px;
+
+        }
+
+
+        .rating button {
+
+            width: 27px;
+
+            height: 27px;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 6px;
+
+            color: #64748b;
+
+            background: white;
+
+            cursor: pointer;
+
+            font-size: .77rem;
+
+            transition: .2s ease;
+
+        }
+
+
+        .rating button:hover {
+
+            border-color:
+                var(--primary);
+
+            color: var(--primary);
+
+        }
+
+
+        .rating button.selected {
+
+            border-color:
+                var(--primary);
+
+            color: white;
+
+            background: var(--primary);
+
+        }
+
+
+        /* =====================================================
+           CONDITION NOTES
+        ===================================================== */
+
+        .notes-section {
+
+            margin-top: 23px;
+
+        }
+
+
+        .notes-section label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: var(--dark);
+
+            font-size: .77rem;
+
+            font-weight: 800;
+
+        }
+
+
+        .condition-notes {
+
+            width: 100%;
+
+            min-height: 85px;
+
+            resize: vertical;
+
+            padding: 11px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 9px;
+
+            outline: none;
+
+            font-family: inherit;
+
+            font-size: .77rem;
+
+        }
+
+
+        .condition-notes:focus {
+
+            border-color:
+                var(--primary);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(37,99,235,.08);
+
+        }
+
+
+        /* =====================================================
+           PHOTO UPLOAD
+        ===================================================== */
+
+        .upload-section {
+
+            margin-top: 22px;
+
+        }
+
+
+        .upload-section h3 {
+
+            color: var(--dark);
+
+            font-size: .85rem;
+
+        }
+
+
+        .upload-section p {
+
+            margin-top: 4px;
+
+            color: var(--text-light);
+
+            font-size: .77rem;
+
+        }
+
+
+        .upload-box {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 120px;
+
+            margin-top: 11px;
+
+            padding: 20px;
+
+            border: 1.5px dashed #cbd5e1;
+
+            border-radius: 11px;
+
+            background: #f8fafc;
+
+            text-align: center;
+
+            cursor: pointer;
+
+            transition: .2s ease;
+
+        }
+
+
+        .upload-box:hover {
+
+            border-color:
+                var(--primary);
+
+            background: #eff6ff;
+
+        }
+
+
+        .upload-box i {
+
+            color: var(--primary);
+
+            font-size: 1.4rem;
+
+        }
+
+
+        .upload-box strong {
+
+            margin-top: 8px;
+
+            color: var(--dark);
+
+            font-size: .77rem;
+
+        }
+
+
+        .upload-box span {
+
+            margin-top: 4px;
+
+            color: var(--text-light);
+
+            font-size: .77rem;
+
+        }
+
+
+        #conditionPhotos {
+
+            display: none;
+
+        }
+
+
+        /* =====================================================
+           RIGHT SIDE
+        ===================================================== */
+
+        .condition-sidebar {
+
+            position: sticky;
+
+            top: 100px;
+
+            display: grid;
+
+            gap: 15px;
+
+        }
+
+
+        /* =====================================================
+           COMPARISON CARD
+        ===================================================== */
+
+        .comparison-card {
+
+            padding: 20px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 17px;
+
+            background: white;
+
+            box-shadow: var(--shadow-sm);
+
+        }
+
+
+        .comparison-card h3 {
+
+            color: var(--dark);
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size: 1.01rem;
+
+        }
+
+
+        .comparison-card > p {
+
+            margin-top: 4px;
+
+            color: var(--text-light);
+
+            font-size: .77rem;
+
+        }
+
+
+        .comparison {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 9px;
+
+            margin-top: 15px;
+
+        }
+
+
+        .comparison-box {
+
+            min-height: 105px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: #f8fafc;
+
+            text-align: center;
+
+        }
+
+
+        .comparison-box i {
+
+            color: #64748b;
+
+            font-size: 1.2rem;
+
+        }
+
+
+        .comparison-box strong {
+
+            margin-top: 7px;
+
+            color: var(--dark);
+
+            font-size: .77rem;
+
+        }
+
+
+        .comparison-box span {
+
+            margin-top: 3px;
+
+            color: var(--text-light);
+
+            font-size: .77rem;
+
+        }
+
+
+        /* =====================================================
+           SCORE CARD
+        ===================================================== */
+
+        .score-card {
+
+            padding: 20px;
+
+            border-radius: 17px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #0f172a,
+                    #1e293b
+                );
+
+        }
+
+
+        .score-card h3 {
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size: 1.2rem;
+
+        }
+
+
+        .score-card p {
+
+            margin-top: 4px;
+
+            color: #94a3b8;
+
+            font-size: .47rem;
+
+        }
+
+
+        .score-value {
+
+            display: flex;
+
+            align-items: baseline;
+
+            gap: 5px;
+
+            margin-top: 18px;
+
+        }
+
+
+        .score-value strong {
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size: 2.3rem;
+
+        }
+
+
+        .score-value span {
+
+            color: #94a3b8;
+
+            font-size: .7rem;
+
+        }
+
+
+        .score-bar {
+
+            width: 100%;
+
+            height: 6px;
+
+            overflow: hidden;
+
+            margin-top: 10px;
+
+            border-radius: 20px;
+
+            background: #334155;
+
+        }
+
+
+        .score-fill {
+
+            width: 100%;
+
+            height: 100%;
+
+            border-radius: inherit;
+
+            background: #22c55e;
+
+            transition: width .3s ease;
+
+        }
+
+
+        .score-message {
+
+            margin-top: 10px;
+
+            color: #86efac;
+
+            font-size: .7rem;
+
+        }
+
+
+        /* =====================================================
+           VERIFY BUTTON
+        ===================================================== */
+
+        .verify-btn {
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            margin-top: 17px;
+
+            padding: 12px;
+
+            border: 0;
+
+            border-radius: 8px;
+
+            color: white;
+
+            background: var(--primary);
+
+            cursor: pointer;
+
+            font-family: inherit;
+
+            font-size: .77rem;
+
+            font-weight: 800;
+
+            transition: .2s ease;
+
+        }
+
+
+        .verify-btn:hover {
+
+            background:
+                var(--primary-dark);
+
+            transform: translateY(-1px);
+
+        }
+
+
+        /* =====================================================
+           INFO CARD
+        ===================================================== */
+
+        .info-card {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 9px;
+
+            padding: 13px;
+
+            border: 1px solid #dbeafe;
+
+            border-radius: 11px;
+
+            color: #1e40af;
+
+            background: #eff6ff;
+
+        }
+
+
+        .info-card i {
+
+            margin-top: 2px;
+
+            font-size: .85rem;
+
+        }
+
+
+        .info-card h4 {
+
+            font-size: .77rem;
+
+        }
+
+
+        .info-card p {
+
+            margin-top: 3px;
+
+            color: #1d4ed8;
+
+            font-size: .77rem;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* =====================================================
+           SUCCESS MODAL
+        ===================================================== */
+
+        .success-modal {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 999;
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+            background:
+                rgba(15,23,42,.55);
+
+            backdrop-filter: blur(5px);
+
+        }
+
+
+        .success-modal.show {
+
+            display: flex;
+
+        }
+
+
+        .success-box {
+
+            width: 100%;
+
+            max-width: 410px;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            background: white;
+
+            text-align: center;
+
+            animation:
+                modalIn .25s ease;
+
+        }
+
+
+        @keyframes modalIn {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(15px)
+                    scale(.97);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+
+            }
+
+        }
+
+
+        .success-icon {
+
+            width: 58px;
+
+            height: 58px;
+
+            display: grid;
+
+            place-items: center;
+
+            margin: auto;
+
+            border-radius: 50%;
+
+            color: #16a34a;
+
+            background: #dcfce7;
+
+            font-size: 1.25rem;
+
+        }
+
+
+        .success-box h2 {
+
+            margin-top: 15px;
+
+            color: var(--dark);
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size: 1.35rem;
+
+        }
+
+
+        .success-box p {
+
+            margin-top: 7px;
+
+            color: var(--text-light);
+
+            font-size: .77rem;
+
+            line-height: 1.6;
+
+        }
+
+
+        .continue-btn {
+
+            width: 100%;
+
+            margin-top: 20px;
+
+            padding: 11px;
+
+            border: 0;
+
+            border-radius: 8px;
+
+            color: white;
+
+            background: var(--primary);
+
+            cursor: pointer;
+
+            font-family: inherit;
+
+            font-size: .55rem;
+
+            font-weight: 800;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .condition-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .condition-sidebar {
+
+                position: static;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .condition-page {
+
+                padding-top: 95px;
+
+            }
+
+
+            .condition-progress {
+
+                overflow-x: auto;
+
+                padding-bottom: 5px;
+
+            }
+
+
+            .progress-line {
+
+                width: 25px;
+
+            }
+
+
+            .resource-banner {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+            }
+
+
+            .check-card {
+
+                padding: 18px;
+
+            }
+
+
+            .condition-item {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+            }
+
+
+            .rating {
+
+                width: 100%;
+
+            }
+
+
+            .rating button {
+
+                flex: 1;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+
+            <a
+                href="../index.html"
+                class="logo">
+
+                <span class="logo-icon">
+
+                    <i
+                        class="fa-solid fa-arrows-rotate">
+                    </i>
+
+                </span>
+
+
+                <span class="logo-text">
+
+                    Campus<span>Circular</span>
+
+                </span>
+
+            </a>
+
+
+            <nav
+                class="nav-links"
+                id="navLinks">
+
+
+                <a
+                    href="../index.html"
+                    class="nav-link">
+
+                    Home
+
+                </a>
+
+
+                <a
+                    href="discovery.html"
+                    class="nav-link">
+
+                    Discover
+
+                </a>
+
+
+                <a
+                    href="ai-discovery.html"
+                    class="nav-link">
+
+                    AI Discovery
+
+                </a>
+
+
+                <a
+                    href="matching.html"
+                    class="nav-link">
+
+                    Matching
+
+                </a>
+
+
+                <a
+                    href="charges.html"
+                    class="nav-link">
+
+                    Charges
+
+                </a>
+
+
+                <a
+                    href="condition.html"
+                    class="nav-link active">
+
+                    Condition
+
+                </a>
+
+            </nav>
+
+
+            <div class="nav-actions">
+
+
+                <a
+                    href="profile.html"
+                    class="btn btn-outline">
+
+                    <i
+                        class="fa-solid fa-user">
+                    </i>
+
+                    Profile
+
+                </a>
+
+
+                <a
+                    href="share-resource.html"
+                    class="btn btn-primary">
+
+                    <i
+                        class="fa-solid fa-plus">
+                    </i>
+
+                    Share Resource
+
+                </a>
+
+            </div>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle">
+
+                <i
+                    class="fa-solid fa-bars">
+                </i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ===================================================== -->
+
+    <main class="condition-page">
+
+        <div class="container">
+
+
+            <!-- HEADER -->
+
+            <section class="condition-header">
+
+
+                <span class="condition-tag">
+
+                    <i
+                        class="fa-solid fa-camera">
+                    </i>
+
+                    Condition Verification
+
+                </span>
+
+
+                <h1>
+
+                    Record the resource's
+                    <span>condition.</span>
+
+                </h1>
+
+
+                <p>
+
+                    A transparent before-and-after condition
+                    record protects both borrowers and lenders
+                    throughout the borrowing lifecycle.
+
+                </p>
+
+            </section>
+
+
+            <!-- =================================================
+                 PROGRESS
+            ================================================== -->
+
+            <div class="condition-progress">
+
+
+                <div class="progress-step completed">
+
+                    <span class="progress-number">
+
+                        <i
+                            class="fa-solid fa-check">
+                        </i>
+
+                    </span>
+
+                    Charges
+
+                </div>
+
+
+                <div class="progress-line"></div>
+
+
+                <div class="progress-step completed">
+
+                    <span class="progress-number">
+
+                        <i
+                            class="fa-solid fa-check">
+                        </i>
+
+                    </span>
+
+                    Agreement
+
+                </div>
+
+
+                <div class="progress-line"></div>
+
+
+                <div class="progress-step active">
+
+                    <span class="progress-number">
+                        03
+                    </span>
+
+                    Condition
+
+                </div>
+
+
+                <div class="progress-line"></div>
+
+
+                <div class="progress-step">
+
+                    <span class="progress-number">
+                        04
+                    </span>
+
+                    Lifecycle
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 RESOURCE
+            ================================================== -->
+
+            <div class="resource-banner">
+
+
+                <div class="resource-info">
+
+
+                    <div class="resource-icon">
+
+                        <i
+                            class="fa-solid fa-laptop">
+                        </i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            MacBook Air M2
+                        </h3>
+
+
+                        <p>
+
+                            Agreement CC-2026-00481
+                            · Borrower: Student Account
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <span class="verified-status">
+
+                    <i
+                        class="fa-solid fa-circle-check">
+                    </i>
+
+                    Agreement Verified
+
+                </span>
+
+            </div>
+
+
+            <!-- =================================================
+                 MAIN GRID
+            ================================================== -->
+
+            <section class="condition-grid">
+
+
+                <!-- =================================================
+                     CHECKLIST
+                ================================================== -->
+
+                <article class="check-card">
+
+
+                    <div class="card-heading">
+
+
+                        <div class="card-heading-icon">
+
+                            <i
+                                class="fa-solid fa-list-check">
+                            </i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h2>
+                                Before Handover Check
+                            </h2>
+
+
+                            <p>
+                                Rate the current condition
+                                of each component.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="condition-items">
+
+
+                        <!-- ITEM -->
+
+                        <div class="condition-item">
+
+
+                            <div class="item-info">
+
+                                <div class="item-icon">
+
+                                    <i
+                                        class="fa-solid fa-display">
+                                    </i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <h4>
+                                        Display
+                                    </h4>
+
+                                    <p>
+                                        Screen, brightness,
+                                        dead pixels
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="rating"
+                                data-item="display">
+
+                                <button
+                                    data-score="1">
+                                    1
+                                </button>
+
+                                <button
+                                    data-score="2">
+                                    2
+                                </button>
+
+                                <button
+                                    data-score="3">
+                                    3
+                                </button>
+
+                                <button
+                                    data-score="4"
+                                    class="selected">
+                                    4
+                                </button>
+
+                                <button
+                                    data-score="5">
+                                    5
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ITEM -->
+
+                        <div class="condition-item">
+
+
+                            <div class="item-info">
+
+                                <div class="item-icon">
+
+                                    <i
+                                        class="fa-solid fa-keyboard">
+                                    </i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <h4>
+                                        Keyboard
+                                    </h4>
+
+                                    <p>
+                                        Keys and touchpad
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="rating"
+                                data-item="keyboard">
+
+                                <button data-score="1">
+                                    1
+                                </button>
+
+                                <button data-score="2">
+                                    2
+                                </button>
+
+                                <button data-score="3">
+                                    3
+                                </button>
+
+                                <button
+                                    data-score="4"
+                                    class="selected">
+                                    4
+                                </button>
+
+                                <button data-score="5">
+                                    5
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ITEM -->
+
+                        <div class="condition-item">
+
+
+                            <div class="item-info">
+
+                                <div class="item-icon">
+
+                                    <i
+                                        class="fa-solid fa-battery-three-quarters">
+                                    </i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <h4>
+                                        Battery
+                                    </h4>
+
+                                    <p>
+                                        Battery health and charging
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="rating"
+                                data-item="battery">
+
+                                <button data-score="1">
+                                    1
+                                </button>
+
+                                <button data-score="2">
+                                    2
+                                </button>
+
+                                <button data-score="3">
+                                    3
+                                </button>
+
+                                <button
+                                    data-score="4">
+                                    4
+                                </button>
+
+                                <button
+                                    data-score="5"
+                                    class="selected">
+                                    5
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ITEM -->
+
+                        <div class="condition-item">
+
+
+                            <div class="item-info">
+
+                                <div class="item-icon">
+
+                                    <i
+                                        class="fa-solid fa-plug">
+                                    </i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <h4>
+                                        Charger
+                                    </h4>
+
+                                    <p>
+                                        Adapter and cable
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="rating"
+                                data-item="charger">
+
+                                <button data-score="1">
+                                    1
+                                </button>
+
+                                <button data-score="2">
+                                    2
+                                </button>
+
+                                <button data-score="3">
+                                    3
+                                </button>
+
+                                <button
+                                    data-score="4"
+                                    class="selected">
+                                    4
+                                </button>
+
+                                <button data-score="5">
+                                    5
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ITEM -->
+
+                        <div class="condition-item">
+
+
+                            <div class="item-info">
+
+                                <div class="item-icon">
+
+                                    <i
+                                        class="fa-solid fa-box">
+                                    </i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <h4>
+                                        Body
+                                    </h4>
+
+                                    <p>
+                                        Scratches, dents and exterior
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="rating"
+                                data-item="body">
+
+                                <button data-score="1">
+                                    1
+                                </button>
+
+                                <button data-score="2">
+                                    2
+                                </button>
+
+                                <button data-score="3">
+                                    3
+                                </button>
+
+                                <button
+                                    data-score="4">
+                                    4
+                                </button>
+
+                                <button
+                                    data-score="5"
+                                    class="selected">
+                                    5
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- NOTES -->
+
+                    <div class="notes-section">
+
+
+                        <label for="conditionNotes">
+
+                            Additional Condition Notes
+
+                        </label>
+
+
+                        <textarea
+                            id="conditionNotes"
+                            class="condition-notes"
+                            placeholder="Mention existing scratches, dents, missing accessories or any other important detail..."></textarea>
+
+                    </div>
+
+
+                    <!-- PHOTO -->
+
+                    <div class="upload-section">
+
+
+                        <h3>
+                            Condition Photos
+                        </h3>
+
+
+                        <p>
+                            Upload clear photos to create a
+                            visual condition record.
+                        </p>
+
+
+                        <label
+                            for="conditionPhotos"
+                            class="upload-box">
+
+                            <i
+                                class="fa-solid fa-cloud-arrow-up">
+                            </i>
+
+
+                            <strong>
+                                Click to upload photos
+                            </strong>
+
+
+                            <span>
+                                PNG, JPG · Up to 5 images
+                            </span>
+
+                        </label>
+
+
+                        <input
+                            type="file"
+                            id="conditionPhotos"
+                            accept="image/*"
+                            multiple>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     SIDEBAR
+                ================================================== -->
+
+                <aside class="condition-sidebar">
+
+
+                    <!-- COMPARISON -->
+
+                    <div class="comparison-card">
+
+
+                        <h3>
+                            Condition Record
+                        </h3>
+
+
+                        <p>
+                            Visual evidence will be compared
+                            again at return.
+                        </p>
+
+
+                        <div class="comparison">
+
+
+                            <div class="comparison-box">
+
+                                <i
+                                    class="fa-solid fa-camera">
+                                </i>
+
+
+                                <strong>
+                                    Before
+                                </strong>
+
+
+                                <span>
+                                    Current condition
+                                </span>
+
+                            </div>
+
+
+                            <div class="comparison-box">
+
+                                <i
+                                    class="fa-solid fa-camera-rotate">
+                                </i>
+
+
+                                <strong>
+                                    After
+                                </strong>
+
+
+                                <span>
+                                    Recorded at return
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SCORE -->
+
+                    <div class="score-card">
+
+
+                        <h3>
+                            Condition Score
+                        </h3>
+
+
+                        <p>
+                            Based on your checklist ratings
+                        </p>
+
+
+                        <div class="score-value">
+
+                            <strong
+                                id="scoreValue">
+                                4.4
+                            </strong>
+
+                            <span>
+                                / 5.0
+                            </span>
+
+                        </div>
+
+
+                        <div class="score-bar">
+
+                            <div
+                                class="score-fill"
+                                id="scoreFill">
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="score-message"
+                            id="scoreMessage">
+
+                            Excellent condition
+
+                        </div>
+
+
+                        <button
+                            class="verify-btn"
+                            id="verifyBtn">
+
+                            <i
+                                class="fa-solid fa-shield-check">
+                            </i>
+
+                            Verify Condition
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- INFO -->
+
+                    <div class="info-card">
+
+
+                        <i
+                            class="fa-solid fa-circle-info">
+                        </i>
+
+
+                        <div>
+
+                            <h4>
+                                Why condition checks matter
+                            </h4>
+
+
+                            <p>
+
+                                The before-condition record
+                                provides evidence if the resource
+                                condition changes during borrowing.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         SUCCESS MODAL
+    ===================================================== -->
+
+    <div
+        class="success-modal"
+        id="successModal">
+
+
+        <div class="success-box">
+
+
+            <div class="success-icon">
+
+                <i
+                    class="fa-solid fa-check">
+                </i>
+
+            </div>
+
+
+            <h2>
+                Condition Verified
+            </h2>
+
+
+            <p>
+
+                The MacBook Air M2 has been successfully
+                recorded at handover. Your borrowing lifecycle
+                can now begin.
+
+            </p>
+
+
+            <button
+                class="continue-btn"
+                id="continueBtn">
+
+                Start Borrowing Lifecycle
+
+                <i
+                    class="fa-solid fa-arrow-right">
+                </i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+
+            <div class="footer-main">
+
+
+                <div class="footer-brand">
+
+
+                    <a
+                        href="../index.html"
+                        class="logo footer-logo">
+
+                        <span class="logo-icon">
+
+                            <i
+                                class="fa-solid fa-arrows-rotate">
+                            </i>
+
+                        </span>
+
+
+                        <span class="logo-text">
+
+                            Campus<span>Circular</span>
+
+                        </span>
+
+                    </a>
+
+
+                    <p>
+
+                        A smarter way for campus communities
+                        to share, borrow and circulate resources.
+
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Platform
+                    </h4>
+
+                    <a href="discovery.html">
+                        Discover
+                    </a>
+
+                    <a href="ai-discovery.html">
+                        AI Discovery
+                    </a>
+
+                    <a href="matching.html">
+                        Matching
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Borrowing
+                    </h4>
+
+                    <a href="charges.html">
+                        Charges
+                    </a>
+
+                    <a href="agreement.html">
+                        Agreement
+                    </a>
+
+                    <a href="lifecycle.html">
+                        Lifecycle
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Community
+                    </h4>
+
+                    <a href="profile.html">
+                        Profile
+                    </a>
+
+                    <a href="settlement.html">
+                        Settlement
+                    </a>
+
+                    <a href="impact.html">
+                        Impact
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+
+                    © 2026 Campus Circular.
+                    All rights reserved.
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Common JS -->
+
+    <script src="../script.js"></script>
+
+
+    <!-- =====================================================
+         CONDITION JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+        /* =====================================================
+           RATINGS
+        ===================================================== */
+
+        const ratings =
+            document.querySelectorAll(
+                ".rating"
+            );
+
+
+        ratings.forEach(
+            rating => {
+
+                const buttons =
+                    rating.querySelectorAll(
+                        "button"
+                    );
+
+
+                buttons.forEach(
+                    button => {
+
+                        button.addEventListener(
+                            "click",
+                            () => {
+
+                                buttons.forEach(
+                                    btn => {
+
+                                        btn.classList.remove(
+                                            "selected"
+                                        );
+
+                                    }
+                                );
+
+
+                                button.classList.add(
+                                    "selected"
+                                );
+
+
+                                calculateScore();
+
+                            }
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           SCORE CALCULATION
+        ===================================================== */
+
+        function calculateScore() {
+
+            let total = 0;
+
+            let count = 0;
+
+
+            document
+                .querySelectorAll(
+                    ".rating"
+                )
+                .forEach(
+                    rating => {
+
+                        const selected =
+                            rating.querySelector(
+                                ".selected"
+                            );
+
+
+                        if (selected) {
+
+                            total += Number(
+                                selected.dataset.score
+                            );
+
+                            count++;
+
+                        }
+
+                    }
+                );
+
+
+            if (count === 0) {
+
+                return;
+
+            }
+
+
+            const score =
+                total / count;
+
+
+            document
+                .getElementById(
+                    "scoreValue"
+                )
+                .innerText =
+                score.toFixed(1);
+
+
+            const percentage =
+                (score / 5) * 100;
+
+
+            document
+                .getElementById(
+                    "scoreFill"
+                )
+                .style.width =
+                `${percentage}%`;
+
+
+            const message =
+                document.getElementById(
+                    "scoreMessage"
+                );
+
+
+            if (score >= 4.5) {
+
+                message.innerText =
+                    "Excellent condition";
+
+            }
+
+            else if (score >= 3.5) {
+
+                message.innerText =
+                    "Good condition";
+
+            }
+
+            else if (score >= 2.5) {
+
+                message.innerText =
+                    "Fair condition";
+
+            }
+
+            else {
+
+                message.innerText =
+                    "Needs attention";
+
+            }
+
+        }
+
+
+        /* =====================================================
+           PHOTO UPLOAD
+        ===================================================== */
+
+        const photoInput =
+            document.getElementById(
+                "conditionPhotos"
+            );
+
+
+        photoInput.addEventListener(
+            "change",
+            () => {
+
+                const files =
+                    photoInput.files;
+
+
+                if (files.length > 5) {
+
+                    alert(
+                        "You can upload maximum 5 photos."
+                    );
+
+
+                    photoInput.value = "";
+
+                    return;
+
+                }
+
+
+                if (files.length > 0) {
+
+                    document
+                        .querySelector(
+                            ".upload-box strong"
+                        )
+                        .innerText =
+                        `${files.length} photo(s) selected`;
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           VERIFY
+        ===================================================== */
+
+        const verifyBtn =
+            document.getElementById(
+                "verifyBtn"
+            );
+
+
+        const successModal =
+            document.getElementById(
+                "successModal"
+            );
+
+
+        verifyBtn.addEventListener(
+            "click",
+            () => {
+
+                const notes =
+                    document.getElementById(
+                        "conditionNotes"
+                    ).value.trim();
+
+
+                /*
+                 * Save condition state.
+                 */
+
+                localStorage.setItem(
+                    "conditionVerified",
+                    "true"
+                );
+
+
+                localStorage.setItem(
+                    "conditionScore",
+                    document.getElementById(
+                        "scoreValue"
+                    ).innerText
+                );
+
+
+                localStorage.setItem(
+                    "conditionNotes",
+                    notes
+                );
+
+
+                successModal.classList.add(
+                    "show"
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           CONTINUE
+        ===================================================== */
+
+        document
+            .getElementById(
+                "continueBtn"
+            )
+            .addEventListener(
+                "click",
+                () => {
+
+                    window.location.href =
+                        "lifecycle.html";
+
+                }
+            );
+
+
+        /* Initial score */
+
+        calculateScore();
+
+    </script>
+
+
+</body>
+
+</html>

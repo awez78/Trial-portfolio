@@ -1,0 +1,2049 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Settlement | Campus Circular</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Common CSS -->
+
+    <link rel="stylesheet"
+          href="../style.css">
+
+
+    <style>
+
+        /* =====================================================
+           PAGE
+        ===================================================== */
+
+        .settlement-page {
+
+            padding-top: 120px;
+
+            padding-bottom: 100px;
+
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .settlement-header {
+
+            max-width: 720px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .settlement-tag {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            padding: 7px 12px;
+
+            border-radius: 50px;
+
+            color: #166534;
+
+            background: #dcfce7;
+
+            font-size: .77rem;
+
+            font-weight: 800;
+
+        }
+
+
+        .settlement-header h1 {
+
+            margin-top: 16px;
+
+            font-family: "Space Grotesk",
+                         sans-serif;
+
+            color: var(--dark);
+
+            font-size:
+                clamp(2.3rem, 5vw, 3.5rem);
+
+            line-height: 1.05;
+
+        }
+
+
+        .settlement-header h1 span {
+
+            color: var(--primary);
+
+        }
+
+
+        .settlement-header p {
+
+            margin-top: 14px;
+
+            color: var(--text-light);
+
+            font-size: .97rem;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           COMPLETION BANNER
+        ===================================================== */
+
+        .completion-banner {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            padding: 17px;
+
+            margin-bottom: 23px;
+
+            border: 1px solid #bbf7d0;
+
+            border-radius: 15px;
+
+            background: #f0fdf4;
+
+        }
+
+
+        .completion-icon {
+
+            width: 45px;
+
+            height: 45px;
+
+            flex-shrink: 0;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 50%;
+
+            color: white;
+
+            background: #22c55e;
+
+        }
+
+
+        .completion-banner h3 {
+
+            color: #166534;
+
+            font-size: .98rem;
+
+        }
+
+
+        .completion-banner p {
+
+            margin-top: 4px;
+
+            color: #15803d;
+
+            font-size: .78rem;
+
+        }
+
+
+        /* =====================================================
+           MAIN GRID
+        ===================================================== */
+
+        .settlement-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr .72fr;
+
+            gap: 22px;
+
+            align-items: start;
+
+        }
+
+
+        /* =====================================================
+           CARD
+        ===================================================== */
+
+        .settlement-card {
+
+            padding: 25px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            background: white;
+
+            box-shadow: var(--shadow-sm);
+
+        }
+
+
+        .section-heading {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 11px;
+
+            margin-bottom: 23px;
+
+        }
+
+
+        .section-icon {
+
+            width: 42px;
+
+            height: 42px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 10px;
+
+            color: var(--primary);
+
+            background: #eff6ff;
+
+        }
+
+
+        .section-heading h2 {
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            color: var(--dark);
+
+            font-size: 1.2rem;
+
+        }
+
+
+        .section-heading p {
+
+            margin-top: 3px;
+
+            color: var(--text-light);
+
+            font-size: .77rem;
+
+        }
+
+
+        /* =====================================================
+           RESOURCE INFO
+        ===================================================== */
+
+        .resource-info {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            padding: 14px;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 12px;
+
+            background: #f8fafc;
+
+        }
+
+
+        .resource-icon {
+
+            width: 48px;
+
+            height: 48px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 10px;
+
+            color: var(--primary);
+
+            background: #dbeafe;
+
+        }
+
+
+        .resource-info h3 {
+
+            color: var(--dark);
+
+            font-size: .9rem;
+
+        }
+
+
+        .resource-info p {
+
+            margin-top: 4px;
+
+            color: var(--text-light);
+
+            font-size: .77rem;
+
+        }
+
+
+        /* =====================================================
+           CHARGE TABLE
+        ===================================================== */
+
+        .charge-list {
+
+            margin-top: 22px;
+
+        }
+
+
+        .charge-row {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            padding: 13px 0;
+
+            border-bottom:
+                1px solid #f1f5f9;
+
+        }
+
+
+        .charge-row:last-child {
+
+            border-bottom: 0;
+
+        }
+
+
+        .charge-label {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+        }
+
+
+        .charge-label i {
+
+            width: 28px;
+
+            height: 28px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 7px;
+
+            color: #64748b;
+
+            background: #f1f5f9;
+
+            font-size: .77rem;
+
+        }
+
+
+        .charge-label span {
+
+            color: var(--dark);
+
+            font-size: .77rem;
+
+        }
+
+
+        .charge-row strong {
+
+            color: var(--dark);
+
+            font-size: .77rem;
+
+        }
+
+
+        .charge-row.deposit strong {
+
+            color: #16a34a;
+
+        }
+
+
+        /* =====================================================
+           TOTAL
+        ===================================================== */
+
+        .total-box {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-top: 10px;
+
+            padding: 17px;
+
+            border-radius: 12px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #1e293b
+                );
+
+        }
+
+
+        .total-box span {
+
+            color: #cbd5e1;
+
+            font-size: .77rem;
+
+        }
+
+
+        .total-box strong {
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size: 1.2rem;
+
+        }
+
+
+        /* =====================================================
+           CONDITION RESULT
+        ===================================================== */
+
+        .condition-result {
+
+            margin-top: 22px;
+
+            padding: 15px;
+
+            border: 1px solid #bbf7d0;
+
+            border-radius: 12px;
+
+            background: #f0fdf4;
+
+        }
+
+
+        .condition-top {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        .condition-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+        }
+
+
+        .condition-title i {
+
+            color: #16a34a;
+
+        }
+
+
+        .condition-title h3 {
+
+            color: #166534;
+
+            font-size: .77rem;
+
+        }
+
+
+        .condition-score {
+
+            padding: 5px 8px;
+
+            border-radius: 50px;
+
+            color: #166534;
+
+            background: #dcfce7;
+
+            font-size: .45rem;
+
+            font-weight: 800;
+
+        }
+
+
+        .condition-result p {
+
+            margin-top: 8px;
+
+            color: #15803d;
+
+            font-size: .77rem;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* =====================================================
+           SIDEBAR
+        ===================================================== */
+
+        .settlement-sidebar {
+
+            position: sticky;
+
+            top: 100px;
+
+            display: grid;
+
+            gap: 15px;
+
+        }
+
+
+        /* =====================================================
+           FINAL AMOUNT
+        ===================================================== */
+
+        .amount-card {
+
+            padding: 23px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #1d4ed8,
+                    #2563eb
+                );
+
+            color: white;
+
+            overflow: hidden;
+
+            position: relative;
+
+        }
+
+
+        .amount-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 130px;
+
+            height: 130px;
+
+            border-radius: 50%;
+
+            right: -50px;
+
+            top: -50px;
+
+            background:
+                rgba(255,255,255,.08);
+
+        }
+
+
+        .amount-card small {
+
+            color: #bfdbfe;
+
+            font-size: .77rem;
+
+        }
+
+
+        .amount-card h2 {
+
+            margin-top: 8px;
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size: 1.9rem;
+
+        }
+
+
+        .amount-card p {
+
+            margin-top: 6px;
+
+            color: #dbeafe;
+
+            font-size: .77rem;
+
+        }
+
+
+        /* =====================================================
+           STATUS
+        ===================================================== */
+
+        .status-card {
+
+            padding: 20px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 17px;
+
+            background: white;
+
+            box-shadow: var(--shadow-sm);
+
+        }
+
+
+        .status-card h3 {
+
+            color: var(--dark);
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size: .9rem;
+
+        }
+
+
+        .status-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-top: 16px;
+
+        }
+
+
+        .status-icon {
+
+            width: 31px;
+
+            height: 31px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 50%;
+
+            color: #16a34a;
+
+            background: #dcfce7;
+
+            font-size: .77rem;
+
+        }
+
+
+        .status-item h4 {
+
+            color: var(--dark);
+
+            font-size: .77rem;
+
+        }
+
+
+        .status-item span {
+
+            display: block;
+
+            margin-top: 2px;
+
+            color: var(--text-light);
+
+            font-size: .77rem;
+
+        }
+
+
+        /* =====================================================
+           DOWNLOAD / RECEIPT
+        ===================================================== */
+
+        .receipt-card {
+
+            padding: 20px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 17px;
+
+            background: white;
+
+            box-shadow: var(--shadow-sm);
+
+        }
+
+
+        .receipt-card h3 {
+
+            color: var(--dark);
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size: .9rem;
+
+        }
+
+
+        .receipt-card p {
+
+            margin-top: 5px;
+
+            color: var(--text-light);
+
+            font-size: .76rem;
+
+            line-height: 1.5;
+
+        }
+
+
+        .receipt-btn {
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            margin-top: 14px;
+
+            padding: 11px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 8px;
+
+            color: var(--dark);
+
+            background: white;
+
+            cursor: pointer;
+
+            font-family: inherit;
+
+            font-size: .77rem;
+
+            font-weight: 800;
+
+            transition: .2s ease;
+
+        }
+
+
+        .receipt-btn:hover {
+
+            border-color: var(--primary);
+
+            color: var(--primary);
+
+            background: #eff6ff;
+
+        }
+
+
+        /* =====================================================
+           FEEDBACK
+        ===================================================== */
+
+        .feedback-card {
+
+            margin-top: 22px;
+
+            padding-top: 22px;
+
+            border-top:
+                1px solid #e2e8f0;
+
+        }
+
+
+        .feedback-card h3 {
+
+            color: var(--dark);
+
+            font-size: .92rem;
+
+        }
+
+
+        .stars {
+
+            display: flex;
+
+            gap: 7px;
+
+            margin-top: 12px;
+
+        }
+
+
+        .star {
+
+            width: 32px;
+
+            height: 32px;
+
+            display: grid;
+
+            place-items: center;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 8px;
+
+            color: #cbd5e1;
+
+            background: white;
+
+            cursor: pointer;
+
+            transition: .2s ease;
+
+        }
+
+
+        .star:hover,
+        .star.selected {
+
+            color: #f59e0b;
+
+            border-color: #fcd34d;
+
+            background: #fffbeb;
+
+        }
+
+
+        /* =====================================================
+           TOAST
+        ===================================================== */
+
+        .settlement-toast {
+
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 20px;
+
+            z-index: 9999;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 13px 17px;
+
+            border-radius: 10px;
+
+            color: white;
+
+            background: #0f172a;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,.18);
+
+            font-size: .77rem;
+
+            opacity: 0;
+
+            transform:
+                translateY(15px);
+
+            pointer-events: none;
+
+            transition: .3s ease;
+
+        }
+
+
+        .settlement-toast.show {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+
+        }
+
+
+        .settlement-toast i {
+
+            color: #4ade80;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .settlement-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .settlement-sidebar {
+
+                position: static;
+
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            .settlement-page {
+
+                padding-top: 95px;
+
+            }
+
+
+            .completion-banner {
+
+                align-items: flex-start;
+
+            }
+
+
+            .settlement-card {
+
+                padding: 18px;
+
+            }
+
+
+            .charge-row {
+
+                align-items: flex-start;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+
+            <a href="../index.html"
+               class="logo">
+
+                <span class="logo-icon">
+
+                    <i class="fa-solid fa-arrows-rotate"></i>
+
+                </span>
+
+
+                <span class="logo-text">
+
+                    Campus<span>Circular</span>
+
+                </span>
+
+            </a>
+
+
+            <nav class="nav-links"
+                 id="navLinks">
+
+
+                <a href="../index.html"
+                   class="nav-link">
+
+                    Home
+
+                </a>
+
+
+                <a href="discovery.html"
+                   class="nav-link">
+
+                    Discover
+
+                </a>
+
+
+                <a href="matching.html"
+                   class="nav-link">
+
+                    Matching
+
+                </a>
+
+
+                <a href="charges.html"
+                   class="nav-link">
+
+                    Charges
+
+                </a>
+
+
+                <a href="lifecycle.html"
+                   class="nav-link">
+
+                    Lifecycle
+
+                </a>
+
+
+                <a href="settlement.html"
+                   class="nav-link active">
+
+                    Settlement
+
+                </a>
+
+            </nav>
+
+
+            <div class="nav-actions">
+
+                <a href="profile.html"
+                   class="btn btn-outline">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Profile
+
+                </a>
+
+
+                <a href="discovery.html"
+                   class="btn btn-primary">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    Discover
+
+                </a>
+
+            </div>
+
+
+            <button class="menu-toggle"
+                    id="menuToggle">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ===================================================== -->
+
+    <main class="settlement-page">
+
+
+        <div class="container">
+
+
+            <!-- HEADER -->
+
+            <section class="settlement-header">
+
+
+                <span class="settlement-tag">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Settlement Complete
+
+                </span>
+
+
+                <h1>
+
+                    Borrowing
+                    <span>settled.</span>
+
+                </h1>
+
+
+                <p>
+
+                    The resource has been returned,
+                    its final condition verified, and
+                    all applicable charges have been
+                    settled transparently.
+
+                </p>
+
+            </section>
+
+
+            <!-- =================================================
+                 COMPLETION
+            ================================================== -->
+
+            <div class="completion-banner">
+
+
+                <div class="completion-icon">
+
+                    <i class="fa-solid fa-check"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Settlement successfully completed
+                    </h3>
+
+                    <p>
+                        Agreement CC-2026-00481 ·
+                        September 08, 2026
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 GRID
+            ================================================== -->
+
+            <section class="settlement-grid">
+
+
+                <!-- =================================================
+                     LEFT
+                ================================================== -->
+
+                <article class="settlement-card">
+
+
+                    <div class="section-heading">
+
+
+                        <div class="section-icon">
+
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h2>
+                                Settlement Summary
+                            </h2>
+
+
+                            <p>
+                                Complete breakdown of the transaction
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RESOURCE -->
+
+                    <div class="resource-info">
+
+
+                        <div class="resource-icon">
+
+                            <i class="fa-solid fa-laptop"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                MacBook Air M2
+                            </h3>
+
+                            <p>
+                                Borrowed for 14 days ·
+                                Agreement #CC-2026-00481
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CHARGES -->
+
+                    <div class="charge-list">
+
+
+                        <div class="charge-row">
+
+
+                            <div class="charge-label">
+
+                                <i class="fa-solid fa-clock"></i>
+
+                                <span>
+                                    Base borrowing charge
+                                </span>
+
+                            </div>
+
+
+                            <strong>
+                                ₹140
+                            </strong>
+
+                        </div>
+
+
+                        <div class="charge-row">
+
+
+                            <div class="charge-label">
+
+                                <i class="fa-solid fa-bolt"></i>
+
+                                <span>
+                                    Service fee
+                                </span>
+
+                            </div>
+
+
+                            <strong>
+                                ₹20
+                            </strong>
+
+                        </div>
+
+
+                        <div class="charge-row">
+
+
+                            <div class="charge-label">
+
+                                <i class="fa-solid fa-shield-halved"></i>
+
+                                <span>
+                                    Security deposit
+                                </span>
+
+                            </div>
+
+
+                            <strong>
+                                ₹500
+                            </strong>
+
+                        </div>
+
+
+                        <div class="charge-row deposit">
+
+
+                            <div class="charge-label">
+
+                                <i class="fa-solid fa-rotate-left"></i>
+
+                                <span>
+                                    Deposit returned
+                                </span>
+
+                            </div>
+
+
+                            <strong>
+                                − ₹500
+                            </strong>
+
+                        </div>
+
+
+                        <div class="charge-row">
+
+
+                            <div class="charge-label">
+
+                                <i class="fa-solid fa-circle-xmark"></i>
+
+                                <span>
+                                    Damage charges
+                                </span>
+
+                            </div>
+
+
+                            <strong>
+                                ₹0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TOTAL -->
+
+                    <div class="total-box">
+
+
+                        <span>
+                            Final amount paid
+                        </span>
+
+
+                        <strong>
+                            ₹1980
+                        </strong>
+
+                    </div>
+
+
+                    <!-- CONDITION -->
+
+                    <div class="condition-result">
+
+
+                        <div class="condition-top">
+
+
+                            <div class="condition-title">
+
+                                <i class="fa-solid fa-circle-check"></i>
+
+                                <h3>
+                                    Final Condition Verified
+                                </h3>
+
+                            </div>
+
+
+                            <span class="condition-score">
+
+                                4.4 / 5
+
+                            </span>
+
+                        </div>
+
+
+                        <p>
+
+                            No new damage was detected.
+                            The resource was returned in
+                            the same condition as recorded
+                            during handover.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- FEEDBACK -->
+
+                    <div class="feedback-card">
+
+
+                        <h3>
+                            How was your borrowing experience?
+                        </h3>
+
+
+                        <div class="stars">
+
+
+                            <button
+                                class="star"
+                                data-rating="1">
+
+                                <i class="fa-solid fa-star"></i>
+
+                            </button>
+
+
+                            <button
+                                class="star"
+                                data-rating="2">
+
+                                <i class="fa-solid fa-star"></i>
+
+                            </button>
+
+
+                            <button
+                                class="star"
+                                data-rating="3">
+
+                                <i class="fa-solid fa-star"></i>
+
+                            </button>
+
+
+                            <button
+                                class="star"
+                                data-rating="4">
+
+                                <i class="fa-solid fa-star"></i>
+
+                            </button>
+
+
+                            <button
+                                class="star"
+                                data-rating="5">
+
+                                <i class="fa-solid fa-star"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     RIGHT
+                ================================================== -->
+
+                <aside class="settlement-sidebar">
+
+
+                    <!-- AMOUNT -->
+
+                    <div class="amount-card">
+
+
+                        <small>
+                            FINAL SETTLEMENT
+                        </small>
+
+
+                        <h2>
+                            ₹1980
+                        </h2>
+
+
+                        <p>
+                            Successfully settled
+                        </p>
+
+                    </div>
+
+
+                    <!-- STATUS -->
+
+                    <div class="status-card">
+
+
+                        <h3>
+                            Settlement Status
+                        </h3>
+
+
+                        <div class="status-item">
+
+
+                            <div class="status-icon">
+
+                                <i class="fa-solid fa-check"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h4>
+                                    Resource Returned
+                                </h4>
+
+                                <span>
+                                    Sep 08 · 04:15 PM
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="status-item">
+
+
+                            <div class="status-icon">
+
+                                <i class="fa-solid fa-check"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h4>
+                                    Condition Verified
+                                </h4>
+
+                                <span>
+                                    No damage detected
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="status-item">
+
+
+                            <div class="status-icon">
+
+                                <i class="fa-solid fa-check"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h4>
+                                    Deposit Refunded
+                                </h4>
+
+                                <span>
+                                    ₹500 returned
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="status-item">
+
+
+                            <div class="status-icon">
+
+                                <i class="fa-solid fa-check"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h4>
+                                    Settlement Complete
+                                </h4>
+
+                                <span>
+                                    Transaction closed
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RECEIPT -->
+
+                    <div class="receipt-card">
+
+
+                        <h3>
+                            Settlement Receipt
+                        </h3>
+
+
+                        <p>
+
+                            Your complete transaction
+                            summary is ready.
+
+                        </p>
+
+
+                        <button
+                            class="receipt-btn"
+                            id="receiptBtn">
+
+                            <i class="fa-solid fa-download"></i>
+
+                            Download Receipt
+
+                        </button>
+
+                    </div>
+
+                </aside>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         TOAST
+    ===================================================== -->
+
+    <div class="settlement-toast"
+         id="settlementToast">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Receipt downloaded successfully
+        </span>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="footer">
+
+
+        <div class="container">
+
+
+            <div class="footer-main">
+
+
+                <div class="footer-brand">
+
+
+                    <a href="../index.html"
+                       class="logo footer-logo">
+
+                        <span class="logo-icon">
+
+                            <i class="fa-solid fa-arrows-rotate"></i>
+
+                        </span>
+
+
+                        <span class="logo-text">
+
+                            Campus<span>Circular</span>
+
+                        </span>
+
+                    </a>
+
+
+                    <p>
+
+                        A smarter way for campus communities
+                        to share, borrow and circulate resources.
+
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Platform
+                    </h4>
+
+                    <a href="discovery.html">
+                        Discover
+                    </a>
+
+                    <a href="matching.html">
+                        Matching
+                    </a>
+
+                    <a href="charges.html">
+                        Charges
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Borrowing
+                    </h4>
+
+                    <a href="agreement.html">
+                        Agreement
+                    </a>
+
+                    <a href="condition.html">
+                        Condition
+                    </a>
+
+                    <a href="lifecycle.html">
+                        Lifecycle
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Community
+                    </h4>
+
+                    <a href="profile.html">
+                        Profile
+                    </a>
+
+                    <a href="settlement.html">
+                        Settlement
+                    </a>
+
+                    <a href="impact.html">
+                        Impact
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+
+                    © 2026 Campus Circular.
+                    All rights reserved.
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- COMMON JS -->
+
+    <script src="../script.js"></script>
+
+
+    <!-- =====================================================
+         SETTLEMENT JS
+    ===================================================== -->
+
+    <script>
+
+        /* =====================================================
+           TOAST FUNCTION
+        ===================================================== */
+
+        const toast =
+            document.getElementById(
+                "settlementToast"
+            );
+
+
+        const toastMessage =
+            document.getElementById(
+                "toastMessage"
+            );
+
+
+        function showToast(message) {
+
+            toastMessage.innerText =
+                message;
+
+
+            toast.classList.add(
+                "show"
+            );
+
+
+            setTimeout(() => {
+
+                toast.classList.remove(
+                    "show"
+                );
+
+            }, 2500);
+
+        }
+
+
+        /* =====================================================
+           STAR RATING
+        ===================================================== */
+
+        const stars =
+            document.querySelectorAll(
+                ".star"
+            );
+
+
+        stars.forEach((star) => {
+
+            star.addEventListener(
+                "click",
+                () => {
+
+                    const rating =
+                        Number(
+                            star.dataset.rating
+                        );
+
+
+                    stars.forEach(
+                        (currentStar) => {
+
+                            const currentRating =
+                                Number(
+                                    currentStar.dataset.rating
+                                );
+
+
+                            if (
+                                currentRating <= rating
+                            ) {
+
+                                currentStar
+                                    .classList
+                                    .add(
+                                        "selected"
+                                    );
+
+                            } else {
+
+                                currentStar
+                                    .classList
+                                    .remove(
+                                        "selected"
+                                    );
+
+                            }
+
+                        }
+                    );
+
+
+                    localStorage.setItem(
+                        "settlementRating",
+                        rating
+                    );
+
+
+                    showToast(
+                        `Thanks! You rated this experience ${rating}/5.`
+                    );
+
+                }
+            );
+
+        });
+
+
+        /* =====================================================
+           RESTORE RATING
+        ===================================================== */
+
+        const savedRating =
+            Number(
+                localStorage.getItem(
+                    "settlementRating"
+                )
+            );
+
+
+        if (savedRating) {
+
+            stars.forEach(
+                (star) => {
+
+                    if (
+                        Number(
+                            star.dataset.rating
+                        ) <= savedRating
+                    ) {
+
+                        star.classList.add(
+                            "selected"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           RECEIPT BUTTON
+        ===================================================== */
+
+        const receiptBtn =
+            document.getElementById(
+                "receiptBtn"
+            );
+
+
+        receiptBtn.addEventListener(
+            "click",
+            () => {
+
+                showToast(
+                    "Receipt downloaded successfully."
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Fee</title>
+
+    <style>
+        /* ================================
+   PLATFORM FEE SECTION
+================================ */
+
+.platform-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+
+/* ================================
+   SECTION HEADING
+================================ */
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.section-heading > span {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #1e3a8a;
+    color: #ffffff;
+
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: 700;
+
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.18);
+}
+
+.section-heading h2 {
+    margin: 0;
+    color: #1e3a8a;
+    font-size: 28px;
+    font-weight: 750;
+}
+
+.section-heading p {
+    margin: 5px 0 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* ================================
+   TRANSACTION CARD
+================================ */
+
+.transaction-card {
+    background: #ffffff;
+    border: 1px solid #dbeafe;
+    border-radius: 20px;
+    padding: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(30, 64, 175, 0.08);
+
+    margin-bottom: 25px;
+}
+
+
+/* Individual rows */
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 5px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.transaction-item span {
+    color: #475569;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.transaction-item strong {
+    color: #1e3a8a;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* ================================
+   TOTAL
+================================ */
+
+.transaction-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 8px;
+    padding: 20px 5px 5px;
+}
+
+.transaction-total span {
+    color: #111827;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.transaction-total strong {
+    color: #1d4ed8;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+
+/* ================================
+   ADMIN REVENUE CARD
+================================ */
+
+.admin-fee-card {
+    position: relative;
+
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #dbeafe
+    );
+
+    border: 1px solid #bfdbfe;
+    border-radius: 20px;
+
+    padding: 28px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(37, 99, 235, 0.08);
+}
+
+.admin-fee-card::after {
+    content: "₹";
+
+    position: absolute;
+    right: 30px;
+    top: 15px;
+
+    font-size: 100px;
+    font-weight: 900;
+
+    color: rgba(30, 64, 175, 0.06);
+
+    pointer-events: none;
+}
+
+.admin-fee-card > span {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    background: #1e3a8a;
+    color: #ffffff;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.admin-fee-card h3 {
+    margin: 16px 0 5px;
+
+    color: #1e3a8a;
+    font-size: 21px;
+}
+
+.admin-fee-card > strong {
+    display: block;
+
+    color: #16a34a;
+    font-size: 32px;
+    font-weight: 800;
+
+    margin: 8px 0;
+}
+
+.admin-fee-card p {
+    max-width: 600px;
+
+    margin: 0;
+
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   HOVER EFFECT
+================================ */
+
+.transaction-card,
+.admin-fee-card {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.transaction-card:hover,
+.admin-fee-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 18px 40px rgba(30, 64, 175, 0.13);
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .platform-section {
+        margin: 40px auto;
+        padding: 0 15px;
+    }
+
+    .section-heading {
+        gap: 12px;
+    }
+
+    .section-heading > span {
+        width: 42px;
+        height: 42px;
+
+        border-radius: 12px;
+        font-size: 15px;
+    }
+
+    .section-heading h2 {
+        font-size: 22px;
+    }
+
+    .section-heading p {
+        font-size: 13px;
+    }
+
+    .transaction-card {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .transaction-item {
+        padding: 16px 2px;
+    }
+
+    .transaction-item span {
+        font-size: 14px;
+    }
+
+    .transaction-item strong {
+        font-size: 15px;
+    }
+
+    .transaction-total {
+        padding-top: 18px;
+    }
+
+    .transaction-total span {
+        font-size: 14px;
+    }
+
+    .transaction-total strong {
+        font-size: 21px;
+    }
+
+    .admin-fee-card {
+        padding: 22px;
+        border-radius: 16px;
+    }
+
+    .admin-fee-card h3 {
+        font-size: 19px;
+    }
+
+    .admin-fee-card > strong {
+        font-size: 28px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <section class="platform-section">
+
+    <div class="section-heading">
+
+        <span>12</span>
+
+        <div>
+            <h2>Platform Fee</h2>
+            <p>Transparent transaction breakdown.</p>
+        </div>
+
+    </div>
+
+
+    <div class="transaction-card">
+
+        <div class="transaction-item">
+            <span>Borrowing Charge</span>
+            <strong>₹300</strong>
+        </div>
+
+        <div class="transaction-item">
+            <span>Platform / Service Fee</span>
+            <strong>₹20</strong>
+        </div>
+
+        <div class="transaction-item">
+            <span>Security Deposit</span>
+            <strong>₹1,000</strong>
+        </div>
+
+
+        <div class="transaction-total">
+
+            <span>Transaction Amount</span>
+
+            <strong>
+                ₹1,320
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="admin-fee-card">
+
+        <span>ADMIN VIEW</span>
+
+        <h3>Platform Revenue</h3>
+
+        <strong>₹20</strong>
+
+        <p>
+            This amount is collected as the simulated
+            platform/service fee.
+        </p>
+
+    </div>
+
+</section>
+    
+</body>
+</html>

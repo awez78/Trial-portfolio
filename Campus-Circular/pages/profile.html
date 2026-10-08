@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Campus Circular user profile - manage borrowed resources, shared resources and campus activity.">
+
+    <title>Profile | Campus Circular</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        /* =====================================================
+           PROFILE PAGE
+        ====================================================== */
+
+        .profile-page {
+            padding-top: 120px;
+            padding-bottom: 100px;
+        }
+
+        /* Profile Hero */
+
+        .profile-hero {
+            position: relative;
+
+            padding: 35px;
+
+            border: 1px solid var(--border);
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff6ff,
+                    #ffffff 55%,
+                    #ecfeff
+                );
+
+            overflow: hidden;
+
+            box-shadow: var(--shadow-sm);
+        }
+
+        .profile-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            right: -100px;
+            top: -130px;
+
+            border-radius: 50%;
+
+            background: rgba(37, 99, 235, 0.08);
+        }
+
+        .profile-hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            left: 35%;
+            bottom: -120px;
+
+            border-radius: 50%;
+
+            background: rgba(20, 184, 166, 0.07);
+        }
+
+        .profile-main {
+            position: relative;
+            z-index: 2;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .profile-user {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .profile-avatar {
+            width: 92px;
+            height: 92px;
+
+            display: grid;
+            place-items: center;
+
+            flex-shrink: 0;
+
+            border: 5px solid rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 2rem;
+            font-weight: 700;
+
+            box-shadow:
+                0 10px 30px rgba(37, 99, 235, 0.18);
+        }
+
+        .profile-details .verified {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+
+            color: var(--success);
+
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .profile-details h1 {
+            margin-top: 5px;
+
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        .profile-details p {
+            margin-top: 7px;
+
+            font-size: 0.82rem;
+        }
+
+        .profile-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            margin-top: 13px;
+        }
+
+        .profile-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+
+            color: var(--text-light);
+
+            font-size: 0.68rem;
+            font-weight: 600;
+        }
+
+        .profile-meta i {
+            color: var(--primary);
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 10px;
+
+            flex-shrink: 0;
+        }
+
+
+        /* Verification */
+
+        .profile-verification {
+            position: relative;
+            z-index: 2;
+
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin-top: 28px;
+            padding-top: 22px;
+
+            border-top: 1px solid rgba(148, 163, 184, 0.25);
+        }
+
+        .verification-icon {
+            width: 38px;
+            height: 38px;
+
+            display: grid;
+            place-items: center;
+
+            flex-shrink: 0;
+
+            border-radius: 10px;
+
+            color: var(--success);
+
+            background: #dcfce7;
+        }
+
+        .verification-text strong {
+            display: block;
+
+            color: var(--dark);
+
+            font-size: 0.76rem;
+        }
+
+        .verification-text span {
+            display: block;
+
+            margin-top: 2px;
+
+            color: var(--text-light);
+
+            font-size: 0.65rem;
+        }
+
+
+        /* Profile Stats */
+
+        .profile-stats {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+
+            margin-top: 25px;
+        }
+
+        .profile-stat {
+            padding: 22px;
+
+            border: 1px solid var(--border);
+            border-radius: 16px;
+
+            background: var(--white);
+
+            box-shadow: var(--shadow-sm);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .profile-stat:hover {
+            transform: translateY(-4px);
+
+            box-shadow: var(--shadow);
+        }
+
+        .profile-stat-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .profile-stat-icon {
+            width: 40px;
+            height: 40px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 10px;
+
+            color: var(--primary);
+
+            background: var(--primary-light);
+        }
+
+        .profile-stat:nth-child(2) .profile-stat-icon {
+            color: var(--secondary);
+            background: #ccfbf1;
+        }
+
+        .profile-stat:nth-child(3) .profile-stat-icon {
+            color: #7c3aed;
+            background: #f3e8ff;
+        }
+
+        .profile-stat:nth-child(4) .profile-stat-icon {
+            color: #d97706;
+            background: #fef3c7;
+        }
+
+        .profile-stat-value {
+            display: block;
+
+            margin-top: 17px;
+
+            color: var(--dark);
+
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 1.65rem;
+            font-weight: 700;
+        }
+
+        .profile-stat-label {
+            display: block;
+
+            margin-top: 3px;
+
+            color: var(--text-light);
+
+            font-size: 0.68rem;
+        }
+
+
+        /* Main Profile Grid */
+
+        .profile-content-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.5fr
+                0.8fr;
+
+            gap: 22px;
+
+            margin-top: 25px;
+        }
+
+        .profile-panel {
+            padding: 25px;
+
+            border: 1px solid var(--border);
+            border-radius: 18px;
+
+            background: var(--white);
+
+            box-shadow: var(--shadow-sm);
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 22px;
+        }
+
+        .panel-header h2 {
+            font-size: 1.25rem;
+        }
+
+        .panel-header p {
+            margin-top: 4px;
+
+            font-size: 0.68rem;
+        }
+
+        .panel-link {
+            color: var(--primary);
+
+            font-size: 0.68rem;
+            font-weight: 700;
+        }
+
+
+        /* Borrowing Cards */
+
+        .borrowing-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .borrowing-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+
+            padding: 13px;
+
+            border: 1px solid var(--border);
+            border-radius: 13px;
+
+            transition:
+                border-color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .borrowing-card:hover {
+            transform: translateX(3px);
+
+            border-color: #bfdbfe;
+        }
+
+        .borrow-image {
+            width: 62px;
+            height: 62px;
+
+            display: grid;
+            place-items: center;
+
+            flex-shrink: 0;
+
+            border-radius: 11px;
+
+            color: var(--primary);
+
+            background: var(--primary-light);
+
+            font-size: 1.3rem;
+        }
+
+        .borrowing-card:nth-child(2) .borrow-image {
+            color: #7c3aed;
+            background: #f3e8ff;
+        }
+
+        .borrowing-card:nth-child(3) .borrow-image {
+            color: #ea580c;
+            background: #ffedd5;
+        }
+
+        .borrow-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .borrow-info h3 {
+            font-size: 0.83rem;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .borrow-info p {
+            margin-top: 4px;
+
+            font-size: 0.63rem;
+        }
+
+        .borrow-info p i {
+            margin-right: 4px;
+
+            color: var(--primary);
+        }
+
+        .borrow-status {
+            flex-shrink: 0;
+
+            padding: 5px 8px;
+
+            border-radius: 999px;
+
+            font-size: 0.59rem;
+            font-weight: 700;
+        }
+
+        .status-active {
+            color: var(--success);
+            background: #f0fdf4;
+        }
+
+        .status-due {
+            color: #d97706;
+            background: #fffbeb;
+        }
+
+        .status-returned {
+            color: var(--text-light);
+            background: var(--surface-soft);
+        }
+
+
+        /* Shared Resources */
+
+        .shared-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .shared-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            padding: 11px;
+
+            border-radius: 12px;
+
+            background: var(--surface-soft);
+        }
+
+        .shared-icon {
+            width: 42px;
+            height: 42px;
+
+            display: grid;
+            place-items: center;
+
+            flex-shrink: 0;
+
+            border-radius: 10px;
+
+            color: var(--secondary);
+
+            background: #ccfbf1;
+        }
+
+        .shared-info {
+            flex: 1;
+        }
+
+        .shared-info strong {
+            display: block;
+
+            color: var(--dark);
+
+            font-size: 0.72rem;
+        }
+
+        .shared-info span {
+            display: block;
+
+            margin-top: 3px;
+
+            color: var(--text-light);
+
+            font-size: 0.61rem;
+        }
+
+        .shared-availability {
+            color: var(--success);
+
+            font-size: 0.59rem;
+            font-weight: 700;
+        }
+
+
+        /* Activity */
+
+        .activity-list {
+            display: grid;
+            gap: 0;
+        }
+
+        .activity-item {
+            position: relative;
+
+            display: flex;
+            gap: 12px;
+
+            padding-bottom: 20px;
+        }
+
+        .activity-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .activity-line {
+            position: absolute;
+
+            left: 16px;
+            top: 34px;
+            bottom: 0;
+
+            width: 1px;
+
+            background: var(--border);
+        }
+
+        .activity-item:last-child .activity-line {
+            display: none;
+        }
+
+        .activity-icon {
+            position: relative;
+            z-index: 2;
+
+            width: 33px;
+            height: 33px;
+
+            display: grid;
+            place-items: center;
+
+            flex-shrink: 0;
+
+            border-radius: 50%;
+
+            color: var(--primary);
+
+            background: var(--primary-light);
+
+            font-size: 0.7rem;
+        }
+
+        .activity-info strong {
+            display: block;
+
+            color: var(--dark);
+
+            font-size: 0.7rem;
+        }
+
+        .activity-info p {
+            margin-top: 3px;
+
+            font-size: 0.62rem;
+        }
+
+
+        /* Quick Actions */
+
+        .quick-actions {
+            display: grid;
+            gap: 9px;
+        }
+
+        .quick-action {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+
+            padding: 11px;
+
+            border: 1px solid var(--border);
+            border-radius: 11px;
+
+            color: var(--dark);
+
+            font-size: 0.69rem;
+            font-weight: 700;
+
+            transition:
+                border-color 0.25s ease,
+                background 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .quick-action:hover {
+            border-color: #bfdbfe;
+
+            background: var(--primary-light);
+
+            transform: translateX(3px);
+        }
+
+        .quick-action-icon {
+            width: 32px;
+            height: 32px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 8px;
+
+            color: var(--primary);
+
+            background: var(--primary-light);
+        }
+
+        .quick-action > i {
+            margin-left: auto;
+
+            color: #94a3b8;
+
+            font-size: 0.6rem;
+        }
+
+
+        /* Sharing Score */
+
+        .sharing-score {
+            margin-top: 22px;
+
+            padding: 18px;
+
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff6ff,
+                    #ecfeff
+                );
+        }
+
+        .score-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .score-header span {
+            color: var(--text-light);
+
+            font-size: 0.66rem;
+            font-weight: 600;
+        }
+
+        .score-header strong {
+            color: var(--primary);
+
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 1.25rem;
+        }
+
+        .score-progress {
+            height: 7px;
+
+            margin-top: 11px;
+
+            overflow: hidden;
+
+            border-radius: 999px;
+
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .score-progress span {
+            display: block;
+
+            width: 86%;
+            height: 100%;
+
+            border-radius: inherit;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+        }
+
+        .sharing-score p {
+            margin-top: 9px;
+
+            font-size: 0.61rem;
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 1000px) {
+
+            .profile-content-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 800px) {
+
+            .profile-main {
+                align-items: flex-start;
+
+                flex-direction: column;
+            }
+
+            .profile-actions {
+                width: 100%;
+            }
+
+            .profile-actions .btn {
+                flex: 1;
+            }
+
+            .profile-stats {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .profile-page {
+                padding-top: 95px;
+                padding-bottom: 70px;
+            }
+
+            .profile-hero {
+                padding: 22px;
+            }
+
+            .profile-user {
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            .profile-avatar {
+                width: 75px;
+                height: 75px;
+
+                font-size: 1.6rem;
+            }
+
+            .profile-details h1 {
+                font-size: 2rem;
+            }
+
+            .profile-actions {
+                flex-direction: column;
+            }
+
+            .profile-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-panel {
+                padding: 18px;
+            }
+
+            .borrowing-card {
+                align-items: flex-start;
+            }
+
+            .borrow-status {
+                display: none;
+            }
+
+            .panel-header {
+                align-items: flex-start;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="navbar" id="navbar">
+
+        <div class="container nav-container">
+
+            <a href="../index.html" class="logo">
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </span>
+
+                <span class="logo-text">
+                    Campus<span>Circular</span>
+                </span>
+
+            </a>
+
+
+            <nav class="nav-links" id="navLinks">
+
+                <a href="../index.html#home" class="nav-link">
+                    Home
+                </a>
+
+                <a href="../index.html#how-it-works" class="nav-link">
+                    How It Works
+                </a>
+
+                <a href="discovery.html" class="nav-link">
+                    Resources
+                </a>
+
+                <a href="../index.html#impact" class="nav-link">
+                    Impact
+                </a>
+
+                <a href="../index.html#about" class="nav-link">
+                    About
+                </a>
+
+            </nav>
+
+
+            <div class="nav-actions">
+
+                <a href="profile.html" class="btn btn-outline">
+                    <i class="fa-solid fa-user"></i>
+                    Profile
+                </a>
+
+                <a href="discovery.html" class="btn btn-primary">
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="profile-page">
+
+        <div class="container">
+
+
+            <!-- =================================================
+                 PROFILE HERO
+            ================================================== -->
+
+            <section class="profile-hero">
+
+                <div class="profile-main">
+
+                    <div class="profile-user">
+
+                        <div class="profile-avatar">
+                            SA
+                        </div>
+
+
+                        <div class="profile-details">
+
+                            <span class="verified">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Verified Campus Member
+                            </span>
+
+                            <h1>Kaashiv </h1>
+
+                            <p>
+                                Computer Engineering · 3rd Year
+                            </p>
+
+
+                            <div class="profile-meta">
+
+                                <span>
+                                    <i class="fa-solid fa-building-columns"></i>
+                                    Campus Member
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Innovation Campus
+                                </span>
+
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    Joined Aug 2026
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-actions">
+
+                        <button class="btn btn-outline"
+                            id="editProfileBtn">
+
+                            <i class="fa-solid fa-pen"></i>
+                            Edit Profile
+
+                        </button>
+
+                        <a href="share-resource.html"
+                            class="btn btn-primary">
+
+                            <i class="fa-solid fa-plus"></i>
+                            Share Resource
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-verification">
+
+                    <div class="verification-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <div class="verification-text">
+
+                        <strong>
+                            Your profile is verified and trusted.
+                        </strong>
+
+                        <span>
+                            You can borrow and lend resources within your
+                            campus community.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PROFILE STATISTICS
+            ================================================== -->
+
+            <section class="profile-stats">
+
+                <div class="profile-stat">
+
+                    <div class="profile-stat-top">
+
+                        <div class="profile-stat-icon">
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </div>
+
+                    </div>
+
+                    <strong class="profile-stat-value">
+                        12
+                    </strong>
+
+                    <span class="profile-stat-label">
+                        Resources Borrowed
+                    </span>
+
+                </div>
+
+
+                <div class="profile-stat">
+
+                    <div class="profile-stat-top">
+
+                        <div class="profile-stat-icon">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </div>
+
+                    </div>
+
+                    <strong class="profile-stat-value">
+                        8
+                    </strong>
+
+                    <span class="profile-stat-label">
+                        Resources Shared
+                    </span>
+
+                </div>
+
+
+                <div class="profile-stat">
+
+                    <div class="profile-stat-top">
+
+                        <div class="profile-stat-icon">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+
+                    </div>
+
+                    <strong class="profile-stat-value">
+                        19
+                    </strong>
+
+                    <span class="profile-stat-label">
+                        Successful Exchanges
+                    </span>
+
+                </div>
+
+
+                <div class="profile-stat">
+
+                    <div class="profile-stat-top">
+
+                        <div class="profile-stat-icon">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+
+                    </div>
+
+                    <strong class="profile-stat-value">
+                        42kg
+                    </strong>
+
+                    <span class="profile-stat-label">
+                        Waste Avoided
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CONTENT GRID
+            ================================================== -->
+
+            <section class="profile-content-grid">
+
+
+                <!-- =================================================
+                     LEFT COLUMN
+                ================================================== -->
+
+                <div>
+
+
+                    <!-- Active Borrowings -->
+
+                    <div class="profile-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    Active Borrowings
+                                </h2>
+
+                                <p>
+                                    Resources currently with you
+                                </p>
+
+                            </div>
+
+                            <a href="lifecycle.html"
+                                class="panel-link">
+
+                                View All
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="borrowing-list">
+
+
+                            <!-- Borrow 1 -->
+
+                            <div class="borrowing-card">
+
+                                <div class="borrow-image">
+                                    <i class="fa-solid fa-laptop"></i>
+                                </div>
+
+                                <div class="borrow-info">
+
+                                    <h3>
+                                        MacBook Air M2
+                                    </h3>
+
+                                    <p>
+                                        <i class="fa-solid fa-calendar"></i>
+                                        Due Sep 02, 2026
+                                    </p>
+
+                                </div>
+
+                                <span class="borrow-status status-active">
+                                    Active
+                                </span>
+
+                            </div>
+
+
+                            <!-- Borrow 2 -->
+
+                            <div class="borrowing-card">
+
+                                <div class="borrow-image">
+                                    <i class="fa-solid fa-camera"></i>
+                                </div>
+
+                                <div class="borrow-info">
+
+                                    <h3>
+                                        Sony Alpha Camera Kit
+                                    </h3>
+
+                                    <p>
+                                        <i class="fa-solid fa-calendar"></i>
+                                        Due Aug 30, 2026
+                                    </p>
+
+                                </div>
+
+                                <span class="borrow-status status-due">
+                                    Due Soon
+                                </span>
+
+                            </div>
+
+
+                            <!-- Borrow 3 -->
+
+                            <div class="borrowing-card">
+
+                                <div class="borrow-image">
+                                    <i class="fa-solid fa-calculator"></i>
+                                </div>
+
+                                <div class="borrow-info">
+
+                                    <h3>
+                                        Scientific Calculator
+                                    </h3>
+
+                                    <p>
+                                        <i class="fa-solid fa-calendar"></i>
+                                        Due Sep 05, 2026
+                                    </p>
+
+                                </div>
+
+                                <span class="borrow-status status-active">
+                                    Active
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Shared Resources -->
+
+                    <div class="profile-panel"
+                        style="margin-top: 22px;">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    My Shared Resources
+                                </h2>
+
+                                <p>
+                                    Resources you are making available
+                                </p>
+
+                            </div>
+
+                            <a href="resources.html"
+                                class="panel-link">
+
+                                Manage
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="shared-list">
+
+
+                            <div class="shared-item">
+
+                                <div class="shared-icon">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+
+                                <div class="shared-info">
+
+                                    <strong>
+                                        Data Structures Textbook
+                                    </strong>
+
+                                    <span>
+                                        4 successful borrows
+                                    </span>
+
+                                </div>
+
+                                <span class="shared-availability">
+                                    Available
+                                </span>
+
+                            </div>
+
+
+                            <div class="shared-item">
+
+                                <div class="shared-icon">
+                                    <i class="fa-solid fa-headphones"></i>
+                                </div>
+
+                                <div class="shared-info">
+
+                                    <strong>
+                                        Studio Headphones
+                                    </strong>
+
+                                    <span>
+                                        2 successful borrows
+                                    </span>
+
+                                </div>
+
+                                <span class="shared-availability">
+                                    Available
+                                </span>
+
+                            </div>
+
+
+                            <div class="shared-item">
+
+                                <div class="shared-icon">
+                                    <i class="fa-solid fa-basketball"></i>
+                                </div>
+
+                                <div class="shared-info">
+
+                                    <strong>
+                                        Basketball
+                                    </strong>
+
+                                    <span>
+                                        3 successful borrows
+                                    </span>
+
+                                </div>
+
+                                <span class="shared-availability">
+                                    Available
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =================================================
+                     RIGHT COLUMN
+                ================================================== -->
+
+                <div>
+
+
+                    <!-- Quick Actions -->
+
+                    <div class="profile-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    Quick Actions
+                                </h2>
+
+                                <p>
+                                    Manage your Campus Circular activity
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="quick-actions">
+
+
+                            <a href="discovery.html"
+                                class="quick-action">
+
+                                <span class="quick-action-icon">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </span>
+
+                                Discover Resources
+
+                                <i class="fa-solid fa-chevron-right"></i>
+
+                            </a>
+
+
+                            <a href="ai-discovery.html"
+                                class="quick-action">
+
+                                <span class="quick-action-icon">
+                                    <i class="fa-solid fa-sparkles"></i>
+                                </span>
+
+                                Try AI Discovery
+
+                                <i class="fa-solid fa-chevron-right"></i>
+
+                            </a>
+
+
+                            <a href="matching.html"
+                                class="quick-action">
+
+                                <span class="quick-action-icon">
+                                    <i class="fa-solid fa-link"></i>
+                                </span>
+
+                                View Matches
+
+                                <i class="fa-solid fa-chevron-right"></i>
+
+                            </a>
+
+
+                            <a href="settlement.html"
+                                class="quick-action">
+
+                                <span class="quick-action-icon">
+                                    <i class="fa-solid fa-receipt"></i>
+                                </span>
+
+                                Settlement History
+
+                                <i class="fa-solid fa-chevron-right"></i>
+
+                            </a>
+
+                        </div>
+
+
+                        <!-- Sharing Score -->
+
+                        <div class="sharing-score">
+
+                            <div class="score-header">
+
+                                <span>
+                                    Campus Sharing Score
+                                </span>
+
+                                <strong>
+                                    86
+                                </strong>
+
+                            </div>
+
+                            <div class="score-progress">
+                                <span></span>
+                            </div>
+
+                            <p>
+                                Excellent! Your sharing activity is
+                                helping resources circulate across campus.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Recent Activity -->
+
+                    <div class="profile-panel"
+                        style="margin-top: 22px;">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    Recent Activity
+                                </h2>
+
+                                <p>
+                                    Your latest Campus Circular actions
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-list">
+
+
+                            <div class="activity-item">
+
+                                <span class="activity-line"></span>
+
+                                <div class="activity-icon">
+                                    <i class="fa-solid fa-arrow-down"></i>
+                                </div>
+
+                                <div class="activity-info">
+
+                                    <strong>
+                                        Borrowed MacBook Air M2
+                                    </strong>
+
+                                    <p>
+                                        2 hours ago
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="activity-item">
+
+                                <span class="activity-line"></span>
+
+                                <div class="activity-icon">
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                </div>
+
+                                <div class="activity-info">
+
+                                    <strong>
+                                        Shared Data Structures Textbook
+                                    </strong>
+
+                                    <p>
+                                        Yesterday
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="activity-item">
+
+                                <span class="activity-line"></span>
+
+                                <div class="activity-icon">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+
+                                <div class="activity-info">
+
+                                    <strong>
+                                        Received a 5-star rating
+                                    </strong>
+
+                                    <p>
+                                        2 days ago
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="activity-item">
+
+                                <span class="activity-line"></span>
+
+                                <div class="activity-icon">
+                                    <i class="fa-solid fa-rotate-left"></i>
+                                </div>
+
+                                <div class="activity-info">
+
+                                    <strong>
+                                        Returned Sports Equipment
+                                    </strong>
+
+                                    <p>
+                                        4 days ago
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-main">
+
+
+                <div class="footer-brand">
+
+                    <a href="../index.html"
+                        class="logo footer-logo">
+
+                        <span class="logo-icon">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                        </span>
+
+                        <span class="logo-text">
+                            Campus<span>Circular</span>
+                        </span>
+
+                    </a>
+
+                    <p>
+                        A smarter way for campus communities to share,
+                        borrow and circulate resources.
+                    </p>
+
+
+                    <div class="social-links">
+
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="#" aria-label="X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>Platform</h4>
+
+                    <a href="discovery.html">
+                        Discover
+                    </a>
+
+                    <a href="ai-discovery.html">
+                        AI Discovery
+                    </a>
+
+                    <a href="matching.html">
+                        Matching
+                    </a>
+
+                    <a href="resources.html">
+                        Resources
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>Borrowing</h4>
+
+                    <a href="charges.html">
+                        Charges
+                    </a>
+
+                    <a href="agreement.html">
+                        Agreement
+                    </a>
+
+                    <a href="condition.html">
+                        Condition Check
+                    </a>
+
+                    <a href="lifecycle.html">
+                        Lifecycle
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>Community</h4>
+
+                    <a href="profile.html">
+                        Profile
+                    </a>
+
+                    <a href="settlement.html">
+                        Settlement
+                    </a>
+
+                    <a href="impact.html">
+                        Impact
+                    </a>
+
+                    <a href="admin.html">
+                        Admin
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 Campus Circular. All rights reserved.
+                </span>
+
+                <div class="footer-bottom-links">
+
+                    <a href="condition.html">
+                        Terms
+                    </a>
+
+                    <a href="agreement.html">
+                        Privacy
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="../script.js"></script>
+
+
+    <script>
+
+        /* =========================================
+           EDIT PROFILE BUTTON
+        ========================================== */
+
+        const editProfileBtn =
+            document.getElementById("editProfileBtn");
+
+        editProfileBtn.addEventListener("click", () => {
+
+            alert("Profile editing will be connected in the next phase.");
+
+        });
+
+    </script>
+
+</body>
+
+</html>

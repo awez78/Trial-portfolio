@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Charges | Campus Circular</title>
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+
+    <style>
+
+        /* =====================================================
+           CHARGES PAGE
+        ===================================================== */
+
+        .charges-page {
+
+            padding-top: 120px;
+            padding-bottom: 100px;
+
+        }
+
+
+        .charges-header {
+
+            max-width: 700px;
+            margin-bottom: 35px;
+
+        }
+
+
+        .charges-tag {
+
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            padding: 7px 12px;
+
+            border-radius: 50px;
+
+            color: #0369a1;
+            background: #e0f2fe;
+
+            font-size: .77rem;
+            font-weight: 800;
+
+        }
+
+
+        .charges-header h1 {
+
+            margin-top: 16px;
+
+            color: var(--dark);
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size:
+                clamp(2.3rem, 5vw, 3.5rem);
+
+            line-height: 1.05;
+
+        }
+
+
+        .charges-header h1 span {
+
+            color: var(--primary);
+
+        }
+
+
+        .charges-header p {
+
+            margin-top: 14px;
+
+            color: var(--text-light);
+
+            font-size: .97rem;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           MAIN GRID
+        ===================================================== */
+
+        .charges-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.15fr .85fr;
+
+            gap: 22px;
+
+            align-items: start;
+
+        }
+
+
+        /* =====================================================
+           CALCULATOR CARD
+        ===================================================== */
+
+        .calculator-card {
+
+            padding: 24px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            background: white;
+
+            box-shadow: var(--shadow-sm);
+
+        }
+
+
+        .card-heading {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .card-heading-icon {
+
+            width: 42px;
+            height: 42px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 10px;
+
+            color: var(--primary);
+
+            background: #eff6ff;
+
+        }
+
+
+        .card-heading h2 {
+
+            color: var(--dark);
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size: 1.2rem;
+
+        }
+
+
+        .card-heading p {
+
+            margin-top: 3px;
+
+            color: var(--text-light);
+
+            font-size: .72rem;
+
+        }
+
+
+        /* =====================================================
+           RESOURCE PREVIEW
+        ===================================================== */
+
+        .resource-preview {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            padding: 13px;
+
+            margin-bottom: 23px;
+
+            border-radius: 11px;
+
+            background: #f8fafc;
+
+        }
+
+
+        .resource-preview-icon {
+
+            width: 47px;
+            height: 47px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 10px;
+
+            color: var(--primary);
+
+            background: #dbeafe;
+
+            font-size: 1.2rem;
+
+        }
+
+
+        .resource-preview h3 {
+
+            color: var(--dark);
+
+            font-size: .9rem;
+
+        }
+
+
+        .resource-preview p {
+
+            margin-top: 4px;
+
+            color: var(--text-light);
+
+            font-size: .77rem;
+
+        }
+
+
+        .verified {
+
+            color: #16a34a;
+
+            font-size: .7rem;
+
+            font-weight: 700;
+
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .form-group {
+
+            margin-bottom: 19px;
+
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: var(--dark);
+
+            font-size: .77rem;
+
+            font-weight: 800;
+
+        }
+
+
+        .input-wrapper {
+
+            position: relative;
+
+        }
+
+
+        .input-wrapper i {
+
+            position: absolute;
+
+            left: 12px;
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            color: #64748b;
+
+            font-size: .85rem;
+
+        }
+
+
+        .form-control {
+
+            width: 100%;
+
+            padding: 11px 12px 11px 34px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 8px;
+
+            outline: none;
+
+            color: var(--dark);
+
+            background: white;
+
+            font-family: inherit;
+
+            font-size: .77rem;
+
+            transition: .2s ease;
+
+        }
+
+
+        .form-control:focus {
+
+            border-color:
+                var(--primary);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(37, 99, 235, .08);
+
+        }
+
+
+        .duration-row {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 12px;
+
+        }
+
+
+        /* =====================================================
+           SECURITY INFO
+        ===================================================== */
+
+        .security-info {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 10px;
+
+            padding: 12px;
+
+            border-radius: 9px;
+
+            color: #92400e;
+
+            background: #fffbeb;
+
+            font-size: .77rem;
+
+            line-height: 1.5;
+
+        }
+
+
+        .security-info i {
+
+            margin-top: 2px;
+
+        }
+
+
+        /* =====================================================
+           SUMMARY CARD
+        ===================================================== */
+
+        .summary-card {
+
+            position: sticky;
+
+            top: 100px;
+
+            padding: 24px;
+
+            border-radius: 18px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #0f172a,
+                    #1e293b
+                );
+
+            box-shadow:
+                0 20px 45px
+                rgba(15, 23, 42, .18);
+
+        }
+
+
+        .summary-card h2 {
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size: 1.2rem;
+            color: #eff6ff;
+
+        }
+
+
+        .summary-card > p {
+
+            margin-top: 5px;
+
+            color: #94a3b8;
+
+            font-size: .77rem;
+
+        }
+
+
+        .summary-amount {
+
+            padding: 20px 0;
+
+            margin-top: 18px;
+
+            border-top: 1px solid
+                rgba(255,255,255,.1);
+
+            border-bottom: 1px solid
+                rgba(255,255,255,.1);
+
+        }
+
+
+        .summary-amount span {
+
+            color: #94a3b8;
+
+            font-size: .77rem;
+
+        }
+
+
+        .summary-amount strong {
+
+            display: block;
+
+            margin-top: 5px;
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size: 2.2rem;
+
+        }
+
+
+        .price-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 9px 0;
+
+            color: #cbd5e1;
+
+            font-size: .77rem;
+
+        }
+
+
+        .price-row strong {
+
+            color: white;
+
+        }
+
+
+        .price-row.deposit {
+
+            padding-bottom: 15px;
+
+            margin-bottom: 5px;
+
+            border-bottom:
+                1px dashed
+                rgba(255,255,255,.15);
+
+        }
+
+
+        .total-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding-top: 15px;
+
+            margin-top: 5px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.15);
+
+        }
+
+
+        .total-row span {
+
+            color: white;
+
+            font-size: .82rem;
+
+            font-weight: 700;
+
+        }
+
+
+        .total-row strong {
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size: 1.25rem;
+
+        }
+
+
+        .continue-btn {
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            margin-top: 20px;
+
+            padding: 12px;
+
+            border: 0;
+
+            border-radius: 8px;
+
+            color: #0f172a;
+
+            background: white;
+
+            cursor: pointer;
+
+            font-family: inherit;
+
+            font-size: .77rem;
+
+            font-weight: 800;
+
+            transition: .2s ease;
+
+        }
+
+
+        .continue-btn:hover {
+
+            transform: translateY(-2px);
+
+            background: #eff6ff;
+
+        }
+
+
+        .refund-note {
+
+            display: flex;
+
+            gap: 7px;
+
+            align-items: flex-start;
+
+            margin-top: 13px;
+
+            color: #94a3b8;
+
+            font-size: .77rem;
+
+            line-height: 1.5;
+
+        }
+
+
+        .refund-note i {
+
+            color: #4ade80;
+
+            margin-top: 2px;
+
+        }
+
+
+        /* =====================================================
+           BREAKDOWN
+        ===================================================== */
+
+        .breakdown-section {
+
+            margin-top: 55px;
+
+        }
+
+
+        .breakdown-heading {
+
+            text-align: center;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .breakdown-heading h2 {
+
+            color: var(--dark);
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size: 1.5rem;
+
+        }
+
+
+        .breakdown-heading p {
+
+            margin-top: 6px;
+
+            color: var(--text-light);
+
+            font-size: .77rem;
+
+        }
+
+
+        .breakdown-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+
+        }
+
+
+        .breakdown-card {
+
+            padding: 19px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+            background: white;
+
+        }
+
+
+        .breakdown-icon {
+
+            width: 38px;
+            height: 38px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 9px;
+
+            color: var(--primary);
+
+            background: #eff6ff;
+
+        }
+
+
+        .breakdown-card h3 {
+
+            margin-top: 13px;
+
+            color: var(--dark);
+
+            font-size: .77rem;
+
+        }
+
+
+        .breakdown-card p {
+
+            margin-top: 5px;
+
+            color: var(--text-light);
+
+            font-size: .77rem;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .charges-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .summary-card {
+
+                position: static;
+
+            }
+
+
+            .breakdown-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .charges-page {
+
+                padding-top: 95px;
+
+                padding-bottom: 70px;
+
+            }
+
+
+            .duration-row {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .breakdown-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .calculator-card,
+            .summary-card {
+
+                padding: 18px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+
+            <a
+                href="../index.html"
+                class="logo">
+
+                <span class="logo-icon">
+
+                    <i
+                        class="fa-solid fa-arrows-rotate">
+                    </i>
+
+                </span>
+
+                <span class="logo-text">
+
+                    Campus<span>Circular</span>
+
+                </span>
+
+            </a>
+
+
+            <nav
+                class="nav-links"
+                id="navLinks">
+
+                <a
+                    href="../index.html"
+                    class="nav-link">
+
+                    Home
+
+                </a>
+
+
+                <a
+                    href="discovery.html"
+                    class="nav-link">
+
+                    Discover
+
+                </a>
+
+
+                <a
+                    href="ai-discovery.html"
+                    class="nav-link">
+
+                    AI Discovery
+
+                </a>
+
+
+                <a
+                    href="matching.html"
+                    class="nav-link">
+
+                    Matching
+
+                </a>
+
+
+                <a
+                    href="charges.html"
+                    class="nav-link active">
+
+                    Charges
+
+                </a>
+
+            </nav>
+
+
+            <div class="nav-actions">
+
+                <a
+                    href="profile.html"
+                    class="btn btn-outline">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Profile
+
+                </a>
+
+
+                <a
+                    href="share-resource.html"
+                    class="btn btn-primary">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Share Resource
+
+                </a>
+
+            </div>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ===================================================== -->
+
+    <main class="charges-page">
+
+        <div class="container">
+
+
+            <!-- HEADER -->
+
+            <section class="charges-header">
+
+                <span class="charges-tag">
+
+                    <i class="fa-solid fa-calculator"></i>
+
+                    Transparent Pricing
+
+                </span>
+
+
+                <h1>
+
+                    Know your cost
+                    <span>before you borrow.</span>
+
+                </h1>
+
+
+                <p>
+
+                    Campus Circular calculates every charge
+                    transparently so borrowers and lenders
+                    know exactly what they will pay or earn.
+
+                </p>
+
+            </section>
+
+
+            <!-- =================================================
+                 CALCULATOR + SUMMARY
+            ================================================== -->
+
+            <section class="charges-grid">
+
+
+                <!-- CALCULATOR -->
+
+                <div class="calculator-card">
+
+
+                    <div class="card-heading">
+
+                        <div class="card-heading-icon">
+
+                            <i
+                                class="fa-solid fa-sliders">
+                            </i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h2>
+                                Borrowing Details
+                            </h2>
+
+                            <p>
+                                Adjust the values to calculate
+                                your final cost.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RESOURCE -->
+
+                    <div class="resource-preview">
+
+                        <div
+                            class="resource-preview-icon">
+
+                            <i
+                                class="fa-solid fa-laptop">
+                            </i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                MacBook Air M2
+                            </h3>
+
+
+                            <p>
+
+                                Owned by Aarav Kulkarni
+                                · ₹150/day
+
+                            </p>
+
+
+                            <span class="verified">
+
+                                <i
+                                    class="fa-solid fa-circle-check">
+                                </i>
+
+                                Verified resource
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RATE -->
+
+                    <div class="form-group">
+
+                        <label for="dailyRate">
+
+                            Daily Borrowing Rate
+
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i
+                                class="fa-solid fa-indian-rupee-sign">
+                            </i>
+
+
+                            <input
+                                type="number"
+                                id="dailyRate"
+                                class="form-control"
+                                value="150"
+                                min="1">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DURATION -->
+
+                    <div class="duration-row">
+
+
+                        <div class="form-group">
+
+                            <label for="duration">
+
+                                Borrowing Duration
+
+                            </label>
+
+
+                            <div class="input-wrapper">
+
+                                <i
+                                    class="fa-solid fa-calendar-days">
+                                </i>
+
+
+                                <input
+                                    type="number"
+                                    id="duration"
+                                    class="form-control"
+                                    value="3"
+                                    min="1">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="lateFee">
+
+                                Late Fee / Day
+
+                            </label>
+
+
+                            <div class="input-wrapper">
+
+                                <i
+                                    class="fa-solid fa-clock">
+                                </i>
+
+
+                                <input
+                                    type="number"
+                                    id="lateFee"
+                                    class="form-control"
+                                    value="50"
+                                    min="0">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SECURITY DEPOSIT -->
+
+                    <div class="form-group">
+
+                        <label for="deposit">
+
+                            Security Deposit
+
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i
+                                class="fa-solid fa-shield-halved">
+                            </i>
+
+
+                            <input
+                                type="number"
+                                id="deposit"
+                                class="form-control"
+                                value="500"
+                                min="0">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- INFO -->
+
+                    <div class="security-info">
+
+                        <i
+                            class="fa-solid fa-circle-info">
+                        </i>
+
+
+                        <span>
+
+                            The security deposit is refundable
+                            after the resource is returned and
+                            passes the condition check.
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUMMARY -->
+
+                <aside class="summary-card">
+
+
+                    <h2>
+                        Payment Summary
+                    </h2>
+
+
+                    <p>
+                        Estimated borrowing cost
+                    </p>
+
+
+                    <div class="summary-amount">
+
+                        <span>
+                            Amount payable
+                        </span>
+
+
+                        <strong id="totalAmount">
+
+                            ₹1,020
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="price-row">
+
+                        <span>
+                            ₹150 ×
+                            <span id="summaryDays">
+                                3
+                            </span>
+                            days
+                        </span>
+
+
+                        <strong id="rentalCost">
+                            ₹450
+                        </strong>
+
+                    </div>
+
+
+                    <div class="price-row">
+
+                        <span>
+                            Platform Fee
+                        </span>
+
+
+                        <strong id="platformFee">
+                            ₹70
+                        </strong>
+
+                    </div>
+
+
+                    <div class="price-row deposit">
+
+                        <span>
+                            Refundable Deposit
+                        </span>
+
+
+                        <strong id="summaryDeposit">
+                            ₹500
+                        </strong>
+
+                    </div>
+
+
+                    <div class="total-row">
+
+                        <span>
+                            Total Payable
+                        </span>
+
+
+                        <strong id="finalAmount">
+
+                            ₹1,020
+
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        class="continue-btn"
+                        id="continueBtn">
+
+                        Continue to Agreement
+
+                        <i
+                            class="fa-solid fa-arrow-right">
+                        </i>
+
+                    </button>
+
+
+                    <div class="refund-note">
+
+                        <i
+                            class="fa-solid fa-rotate-left">
+                        </i>
+
+                        <span>
+
+                            Your ₹500 security deposit will be
+                            refunded after successful return and
+                            condition verification.
+
+                        </span>
+
+                    </div>
+
+                </aside>
+
+            </section>
+
+
+            <!-- =================================================
+                 BREAKDOWN
+            ================================================== -->
+
+            <section class="breakdown-section">
+
+
+                <div class="breakdown-heading">
+
+                    <h2>
+                        Where Your Money Goes
+                    </h2>
+
+
+                    <p>
+                        A transparent fee structure for everyone.
+                    </p>
+
+                </div>
+
+
+                <div class="breakdown-grid">
+
+
+                    <div class="breakdown-card">
+
+                        <div class="breakdown-icon">
+
+                            <i
+                                class="fa-solid fa-hand-holding-dollar">
+                            </i>
+
+                        </div>
+
+
+                        <h3>
+                            Lender Earnings
+                        </h3>
+
+
+                        <p>
+
+                            The majority of your rental payment
+                            goes directly to the resource owner.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="breakdown-card">
+
+                        <div class="breakdown-icon">
+
+                            <i
+                                class="fa-solid fa-server">
+                            </i>
+
+                        </div>
+
+
+                        <h3>
+                            Platform Fee
+                        </h3>
+
+
+                        <p>
+
+                            A small platform fee helps maintain
+                            verification, matching and platform
+                            operations.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="breakdown-card">
+
+                        <div class="breakdown-icon">
+
+                            <i
+                                class="fa-solid fa-shield-halved">
+                            </i>
+
+                        </div>
+
+
+                        <h3>
+                            Security Deposit
+                        </h3>
+
+
+                        <p>
+
+                            A refundable amount that protects
+                            lenders against resource damage.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+
+            <div class="footer-main">
+
+
+                <div class="footer-brand">
+
+                    <a
+                        href="../index.html"
+                        class="logo footer-logo">
+
+                        <span class="logo-icon">
+
+                            <i
+                                class="fa-solid fa-arrows-rotate">
+                            </i>
+
+                        </span>
+
+
+                        <span class="logo-text">
+
+                            Campus<span>Circular</span>
+
+                        </span>
+
+                    </a>
+
+
+                    <p>
+
+                        A smarter way for campus communities
+                        to share, borrow and circulate resources.
+
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Platform
+                    </h4>
+
+                    <a href="discovery.html">
+                        Discover
+                    </a>
+
+                    <a href="ai-discovery.html">
+                        AI Discovery
+                    </a>
+
+                    <a href="matching.html">
+                        Matching
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Borrowing
+                    </h4>
+
+                    <a href="charges.html">
+                        Charges
+                    </a>
+
+                    <a href="agreement.html">
+                        Agreement
+                    </a>
+
+                    <a href="lifecycle.html">
+                        Lifecycle
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Community
+                    </h4>
+
+                    <a href="profile.html">
+                        Profile
+                    </a>
+
+                    <a href="settlement.html">
+                        Settlement
+                    </a>
+
+                    <a href="impact.html">
+                        Impact
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+
+                    © 2026 Campus Circular.
+                    All rights reserved.
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Common JS -->
+
+    <script src="../script.js"></script>
+
+
+    <!-- =====================================================
+         CHARGES JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+        const dailyRate =
+            document.getElementById(
+                "dailyRate"
+            );
+
+        const duration =
+            document.getElementById(
+                "duration"
+            );
+
+        const lateFee =
+            document.getElementById(
+                "lateFee"
+            );
+
+        const deposit =
+            document.getElementById(
+                "deposit"
+            );
+
+
+        const rentalCost =
+            document.getElementById(
+                "rentalCost"
+            );
+
+        const platformFee =
+            document.getElementById(
+                "platformFee"
+            );
+
+        const summaryDeposit =
+            document.getElementById(
+                "summaryDeposit"
+            );
+
+        const totalAmount =
+            document.getElementById(
+                "totalAmount"
+            );
+
+        const finalAmount =
+            document.getElementById(
+                "finalAmount"
+            );
+
+        const summaryDays =
+            document.getElementById(
+                "summaryDays"
+            );
+
+
+        /* =====================================================
+           CALCULATE CHARGES
+        ===================================================== */
+
+        function calculateCharges() {
+
+            let rate =
+                Number(dailyRate.value) || 0;
+
+            let days =
+                Number(duration.value) || 1;
+
+            let security =
+                Number(deposit.value) || 0;
+
+
+            /*
+                Base rental amount
+            */
+
+            let rental =
+                rate * days;
+
+
+            /*
+                Platform fee = 10%
+                of rental amount.
+            */
+
+            let platform =
+                Math.round(
+                    rental * 0.10
+                );
+
+
+            /*
+                Final amount
+                excludes late fee because
+                late fee only applies if
+                the user returns late.
+            */
+
+            let total =
+                rental +
+                platform +
+                security;
+
+
+            rentalCost.innerText =
+                `₹${rental}`;
+
+            platformFee.innerText =
+                `₹${platform}`;
+
+            summaryDeposit.innerText =
+                `₹${security}`;
+
+            summaryDays.innerText =
+                days;
+
+            totalAmount.innerText =
+                `₹${total}`;
+
+            finalAmount.innerText =
+                `₹${total}`;
+
+        }
+
+
+        /* =====================================================
+           INPUT EVENTS
+        ===================================================== */
+
+        dailyRate.addEventListener(
+            "input",
+            calculateCharges
+        );
+
+
+        duration.addEventListener(
+            "input",
+            calculateCharges
+        );
+
+
+        deposit.addEventListener(
+            "input",
+            calculateCharges
+        );
+
+
+        lateFee.addEventListener(
+            "input",
+            calculateCharges
+        );
+
+
+        /* =====================================================
+           CONTINUE
+        ===================================================== */
+
+        document
+            .getElementById("continueBtn")
+            .addEventListener(
+                "click",
+                () => {
+
+                    window.location.href =
+                        "agreement.html";
+
+                }
+            );
+
+
+        /* Initial calculation */
+
+        calculateCharges();
+
+    </script>
+
+
+</body>
+
+</html>

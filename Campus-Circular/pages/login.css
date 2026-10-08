@@ -1,0 +1,833 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #eff6ff;
+
+    --purple: #7c3aed;
+
+    --text: #172033;
+    --muted: #64748b;
+
+    --border: #dbe3ed;
+
+    --white: #ffffff;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef5ff,
+            #f8faff,
+            #f3efff
+        );
+
+    color: var(--text);
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================
+   PAGE
+===================================== */
+
+.login-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =====================================
+   LOGIN CARD
+===================================== */
+
+.login-card {
+    width: min(950px, 100%);
+
+    min-height: 600px;
+
+    display: grid;
+
+    grid-template-columns: 42% 58%;
+
+    background: white;
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    z-index: 5;
+
+    box-shadow:
+        0 30px 80px rgba(30, 41, 59, .15);
+
+    animation: cardEnter 1s cubic-bezier(.22, 1, .36, 1);
+}
+
+
+/* =====================================
+   WELCOME SECTION
+===================================== */
+
+.welcome-section {
+    position: relative;
+
+    padding: 55px 45px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            145deg,
+            #2563eb,
+            #4f46e5,
+            #7c3aed
+        );
+
+    overflow: hidden;
+}
+
+.welcome-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    right: -170px;
+    top: -100px;
+
+    animation: rotate 18s linear infinite;
+}
+
+.welcome-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.06);
+
+    bottom: -100px;
+    left: -80px;
+
+    animation: pulse 5s ease-in-out infinite;
+}
+
+
+/* =====================================
+   WELCOME ICON
+===================================== */
+
+.welcome-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,.16);
+
+    backdrop-filter: blur(10px);
+
+    font-size: 27px;
+
+    margin-bottom: 28px;
+
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+.welcome-section > span {
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: rgba(255,255,255,.8);
+}
+
+.welcome-section h1 {
+    font-size: clamp(38px, 4vw, 55px);
+
+    line-height: 1.05;
+
+    margin-top: 12px;
+    margin-bottom: 20px;
+
+    letter-spacing: -2px;
+}
+
+.welcome-section p {
+    max-width: 300px;
+
+    color: rgba(255,255,255,.78);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================
+   FLOATING ICONS
+===================================== */
+
+.floating-icon {
+    position: absolute;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,.12);
+
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: rgba(255,255,255,.8);
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+.icon-one {
+    right: 45px;
+    bottom: 120px;
+
+    animation-delay: .5s;
+}
+
+.icon-two {
+    right: 90px;
+    bottom: 55px;
+
+    animation-delay: 1.2s;
+}
+
+.icon-three {
+    left: 35px;
+    bottom: 45px;
+
+    animation-delay: 1.8s;
+}
+
+
+/* =====================================
+   FORM SECTION
+===================================== */
+
+.form-section {
+    padding: 55px 60px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    animation: formEnter 1s ease .2s both;
+}
+
+.form-header {
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    font-size: 32px;
+
+    margin-bottom: 8px;
+
+    letter-spacing: -.8px;
+}
+
+.form-header p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =====================================
+   FORM
+===================================== */
+
+form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #334155;
+}
+
+.input-group label span {
+    color: #ef4444;
+}
+
+
+/* =====================================
+   INPUT
+===================================== */
+
+.input-box {
+    height: 53px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: #fff;
+
+    transition:
+        border .25s ease,
+        box-shadow .25s ease,
+        transform .25s ease;
+}
+
+.input-box > i:first-child {
+    color: #94a3b8;
+
+    font-size: 15px;
+
+    transition: .25s;
+}
+
+.input-box input {
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    font-size: 14px;
+
+    color: var(--text);
+}
+
+.input-box input::placeholder {
+    color: #a1adbd;
+}
+
+.input-box:focus-within {
+    border-color: var(--primary);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,.08);
+}
+
+.input-box:focus-within > i:first-child {
+    color: var(--primary);
+}
+
+.password-eye {
+    cursor: pointer;
+
+    color: #94a3b8;
+
+    transition: .25s;
+}
+
+.password-eye:hover {
+    color: var(--primary);
+}
+
+.input-group small {
+    color: #94a3b8;
+
+    font-size: 10px;
+}
+
+
+/* =====================================
+   OPTIONS
+===================================== */
+
+.options {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    font-size: 12px;
+}
+
+.remember {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--muted);
+
+    cursor: pointer;
+}
+
+.remember input {
+    accent-color: var(--primary);
+}
+
+.options a {
+    text-decoration: none;
+
+    color: var(--primary);
+
+    font-weight: 600;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   LOGIN BUTTON
+===================================== */
+
+.login-btn {
+    height: 54px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 25px rgba(37,99,235,.25);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.login-btn::before {
+    content: "";
+
+    position: absolute;
+
+    width: 70px;
+    height: 180%;
+
+    background: rgba(255,255,255,.2);
+
+    transform: rotate(25deg);
+
+    left: -120px;
+
+    transition: .6s;
+}
+
+.login-btn:hover::before {
+    left: 120%;
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 35px rgba(37,99,235,.3);
+}
+
+.login-btn i {
+    transition: .3s;
+}
+
+.login-btn:hover i {
+    transform: translateX(6px);
+}
+
+
+/* =====================================
+   REGISTER
+===================================== */
+
+.register-text {
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    margin-top: 25px;
+}
+
+.register-text a {
+    color: var(--primary);
+
+    text-decoration: none;
+
+    font-weight: 700;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   BACKGROUND SHAPES
+===================================== */
+
+.shape {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(1px);
+
+    pointer-events: none;
+}
+
+.shape-one {
+    width: 280px;
+    height: 280px;
+
+    background: rgba(37,99,235,.1);
+
+    top: -100px;
+    left: -80px;
+
+    animation: shapeMove 8s ease-in-out infinite;
+}
+
+.shape-two {
+    width: 350px;
+    height: 350px;
+
+    background: rgba(124,58,237,.08);
+
+    right: -120px;
+    bottom: -150px;
+
+    animation: shapeMove 10s ease-in-out infinite reverse;
+}
+
+.shape-three {
+    width: 100px;
+    height: 100px;
+
+    background: rgba(59,130,246,.08);
+
+    right: 15%;
+    top: 10%;
+
+    animation: floating 5s ease-in-out infinite;
+}
+
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes cardEnter {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes formEnter {
+
+    from {
+        opacity: 0;
+
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}
+
+@keyframes iconFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(4deg);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: .5;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: .8;
+    }
+}
+
+@keyframes rotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shapeMove {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(30px, -20px);
+    }
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 800px) {
+
+    .login-card {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-section {
+        min-height: 280px;
+
+        padding: 35px 40px;
+    }
+
+    .welcome-section h1 {
+        font-size: 40px;
+    }
+
+    .floating-icon {
+        display: none;
+    }
+
+    .form-section {
+        padding: 45px;
+    }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 500px) {
+
+    .login-page {
+        padding: 20px;
+    }
+
+    .login-card {
+        border-radius: 20px;
+    }
+
+    .welcome-section {
+        min-height: 240px;
+
+        padding: 30px 25px;
+    }
+
+    .welcome-icon {
+        width: 52px;
+        height: 52px;
+
+        font-size: 22px;
+
+        margin-bottom: 18px;
+    }
+
+    .welcome-section h1 {
+        font-size: 34px;
+
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+
+    .welcome-section p {
+        font-size: 12px;
+    }
+
+    .form-section {
+        padding: 35px 22px;
+    }
+
+    .form-header h2 {
+        font-size: 27px;
+    }
+
+    .options {
+        font-size: 11px;
+    }
+}
+
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 350px) {
+
+    .form-section {
+        padding: 30px 17px;
+    }
+
+    .welcome-section {
+        padding: 28px 20px;
+    }
+
+    .welcome-section h1 {
+        font-size: 30px;
+    }
+
+    .input-box {
+        height: 50px;
+    }
+}
+
+
+/* =====================================
+   REDUCED MOTION
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
